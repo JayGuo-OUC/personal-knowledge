@@ -35,6 +35,15 @@ append-only  chronological record。可用 `grep "^## \[" log.md` 快速检索�
 全库链接校验：无孤儿页；Git 断链已全部消除。
 遗留：`[[CLAUDE]]` 指向 vault 根目录 `CLAUDE.md`（规则文件），若 Obsidian vault 范围含根目录则有效，否则需在插件/设置中确认索引范围。
 
+## [2026-08-31] add | 新增 Git 日常流程与命令速查
+用户需要在 `wiki/git/` 下新增一份「按流程组织的日常操作手册」。新建 `11-Git日常流程与命令速查.md`（type: term）：
+七条铁律 → 晨间同步 → 开分支 → 小步提交 → 提交前自检 → Conventional Commits → 追平主干(rebase) →
+整理本地历史(amend/rebase -i) → 推送提 PR → 评审后修改(fixup) → 合入后清理 → 冲突处理 → 事故救急
+(错分支/撤销/已推送回滚/reflog/误删分支/stash) + 撤销矩阵 + 命令速查表 + 全局配置与别名 +
+AI 辅助编程场景下的提交纪律。
+联动更新：`git-index.md`（新增条目、条目数 10→11）、`wiki/index.md`（Git 10→11 篇、总条目 29→30）、
+`03-Git基础命令.md` 与 `09-Git工作流与最佳实践.md` 补反向双链。
+
 ## [2026-08-27] daily | 每日任务执行（无新资料）
 按 CLAUDE.md 第八节执行每日整理流程：`Clippings/` 不存在；`raw/` 为空；`mine/` 无新增；`output/` 无新增产出。
 全库无新资料需要编译进 wiki。链接校验状态与上午一致：无孤儿页、Git 断链已修复。

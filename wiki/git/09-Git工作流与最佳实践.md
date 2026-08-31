@@ -39,6 +39,7 @@ fix(auth): 修复 token 过期
 - [[04-Git分支模型]]
 - [[05-Git远程协作]]
 - [[06-Git变基与历史改写]]
+- [[11-Git日常流程与命令速查]]
 
 ## 来源
 - https://git-scm.com/book/zh/v2/分布式-Git-分布式工作流程
