@@ -44,6 +44,14 @@ AI 辅助编程场景下的提交纪律。
 联动更新：`git-index.md`（新增条目、条目数 10→11）、`wiki/index.md`（Git 10→11 篇、总条目 29→30）、
 `03-Git基础命令.md` 与 `09-Git工作流与最佳实践.md` 补反向双链。
 
+## [2026-08-31] expand | 补充 Git 速查的分支位置标注与 rebase 详解
+用户反馈「不够详细、看不出 rebase 时本地在哪个分支」。重写 `11-Git日常流程与命令速查.md`：
+- 新增第〇节「我现在到底在哪个分支」：`git status` 首行四种状态表（正常 / 游离 HEAD / rebase 进行中 / merge 冲突中），明确 rebase 期间 `branch --show-current` 返回空。
+- 新增第一节「rebase 到底在干什么」：before/after 提交图、Git 内部五步（找 merge-base → 摘补丁 → 游离 HEAD 落新基点 → 重放 → 分支指针搬家）、三方关系表（当前分支 / upstream / 被重放提交 / 不被改动的 upstream）、`--onto` 语法、merge vs rebase 对比图。
+- 全篇每个流程加「本地位置 / 执行后」标注 + 分支位置变化表；rebase、冲突、救急各节按触发命令区分收尾方式（rebase 用 `--continue`，merge 用 `commit`）。
+- 新增附录「一次完整任务的分支迁移轨迹」11 步表。
+- 章节由 16 节扩为 18 节 + 附录，篇幅约翻倍。
+
 ## [2026-08-27] daily | 每日任务执行（无新资料）
 按 CLAUDE.md 第八节执行每日整理流程：`Clippings/` 不存在；`raw/` 为空；`mine/` 无新增；`output/` 无新增产出。
 全库无新资料需要编译进 wiki。链接校验状态与上午一致：无孤儿页、Git 断链已修复。
