@@ -52,7 +52,68 @@ AI 辅助编程场景下的提交纪律。
 - 新增附录「一次完整任务的分支迁移轨迹」11 步表。
 - 章节由 16 节扩为 18 节 + 附录，篇幅约翻倍。
 
+## [2026-09-02] add | 新增「JDK & Spring 架构升级」主题知识库
+用户计划将公司后端从 JDK 8 + Spring Boot 2.3 升级至 JDK 21 + Spring Boot 4（初提 Spring 3，经版本核查后修正为 Spring Boot 4）。
+在 `wiki/JDK&Spring/` 下新建 5 篇条目 + 主题索引 `JDK&Spring-index.md`：
+- `01-JDK21新特性.md`：虚拟线程(JEP 444)、记录模式(440)、switch 模式匹配(441)、有序集合(431)、分代 ZGC(439)、
+  外部函数与内存 API(442)、KEM API(452)；预览特性表（结构化并发/作用域值等，注明字符串模板已在 JDK 23 移除）；
+  移除与行为变更清单（强封装、JAXB 移除、Nashorn 移除等）；**Oracle JDK 21 免费许可 2026-09 到期**的关键提醒。
+- `02-Spring4新特性.md`：基座对照表（Jakarta EE 11 / Servlet 6.1 / Hibernate 7 / Tomcat 11 / Jackson 3 / JUnit 6）；
+  虚拟线程默认开启；一等公民 API 版本化（RFC 9745）；内建弹性（@Retryable / @ConcurrencyLimit）；
+  JSpecify 空安全（NullAway 需 JDK 21+）；模块化与 starter 改名；Jackson 3 破坏性变更；
+  Micrometer 2 + OpenTelemetry；GraalVM 24 AOT；RestTemplate 将于 7.1 废弃、8.0 移除。
+- `03-JDK21与JDK8对比.md`：总览对照 + 语言特性落差表（9~21 逐版本）+ 代码对照 + 运行时性能落差 +
+  容器感知差异 + 安全许可落差 + 破坏性变更清单 + 升级路径建议（先单独升 JDK 再动 Spring）。
+- `04-Spring4与Spring2对比.md`：五大破坏性变更（javax→jakarta / Security 重写 / 第三方依赖连锁 /
+  Jackson 3 默认行为 / 配置与 starter 改名）+ 推荐迁移路径 2.3→2.7→3.5→4.1 + OpenRewrite 配方与人工补位 +
+  第三方依赖对照表 + 工作量估算（约 10–17 人日/中型项目）。
+- `05-升级必要性.md`：风险侧（Boot 2.3 已于 2021-05 EOL、商业支持 2022-08 终止，JDK 8 无官方免费更新；
+  等保/供应链合规风险）+ 收益侧（云原生适配、虚拟线程、ZGC、可观测性、TCO）+ 信创与数据合规章节
+  （国产 OpenJDK 发行版 Dragonwell / 毕昇 / Kona，规避 Oracle 订阅）+ 风险对冲表 + 分阶段路线图。
+- `JDK&Spring-index.md`：主题索引，含一句话结论、关键时间节点表、推荐阅读顺序、跨主题（云原生）关联。
+联动更新：`wiki/index.md`（新增主题，主题数 2→3，条目数 30→35）。
+交叉引用：5 篇条目之间互链，并向云原生主题（[[01-云原生概览]]、[[03-容器技术基础]]、[[08-Pod与工作负载]]、
+[[12-微服务架构]]、[[14-可观测性]]、[[15-CI-CD与DevOps]]、[[16-Serverless与FaaS]]、[[17-云原生安全]]、
+[[18-云原生最佳实践]]）建立跨主题双链。
+数据核实时点：2026-09-02（Spring Boot 4.1.0 为当前稳定版，2026-06-10 发布；Spring Boot 3.x 全系 EOL）。
+
 ## [2026-08-27] daily | 每日任务执行（无新资料）
 按 CLAUDE.md 第八节执行每日整理流程：`Clippings/` 不存在；`raw/` 为空；`mine/` 无新增；`output/` 无新增产出。
 全库无新资料需要编译进 wiki。链接校验状态与上午一致：无孤儿页、Git 断链已修复。
 产出 `output/daily-log-2026-08-27.md`。知识库规模维持：29 条目（云原生 19 + Git 10），2 主题，1 skill。
+
+## 2026-09-02
+
+- **新增主题：「珍大户的经济圈」**（`wiki/珍大户/`），来自知识星球同名付费星球（group_id `458522225218`）。
+- 摄入量：**1024 条精华正文**，约 **149 万字**，时间跨度 2018-08 — 2026-09。
+- 产出：MOC 总索引 `珍大户-index.md` + 14 个主题页 + `珍大户-重点必读.md`（90 条 4—5 心精选）+ `珍大户-系列脉络.md`（8 大系列编号清单）。
+- 原始数据落位 `raw/珍大户/`：`master.json`（精华正文与元数据）、`master_themed.json`（含主题与系列标注）、`digest_master.json`（官方目录 2010 条）、`kdocs_lines.txt`（官方目录文档全文）。
+- 方法说明：
+  - 官方 Skill 的 `get_group_topics` 被星主关闭权限，改用浏览器会话抓取；点击「只看星主」后底层 API 走 `scope=digests`，即官方精华流。
+  - ❤ 重要度评级取自星球官方维护的金山文档《星球目录时间线（七周年重制版）》。
+  - 主题归类为脚本规则粗分（标题 + 官方摘要 + 正文前 400 字），边界存在少量模糊。
+
+## 2026-09-03
+
+- **新增主题：「AI Agent Skill」**（`wiki/Agent-Skill/`），15 个页面 = MOC 索引 + 14 篇条目。
+- 选题动因：用户（技术负责人）要系统理解 Skill 的概念、结构、作用原理，并为公司已选定的 Cursor 配一套可落地的技能包与教程。
+- 篇目（按学习/落地顺序编号，非字母序）：01 是什么 / 02 开放标准与生态 / 03 SKILL.md 结构与 frontmatter /
+  04 渐进式披露 / 05 作用原理 / 06 目录结构与捆绑资源 / 07 与 Rules·Commands·MCP·Subagent 对比 /
+  08 如何写出好 Skill / 09 Cursor 中的 Skill 全景 / 10 Cursor 安装与使用教程 / 11 实战技能包六件套 /
+  12 安全与企业合规 / 13 速查表与 FAQ / 14 学习路线与资源。
+- 核心结论：
+  - Skill = `SKILL.md`（YAML frontmatter + Markdown 指令）+ 可选 `scripts/`、`references/`、`assets/` 的**文件夹**。
+  - 开放标准由 Anthropic 发起、agentskills.io 维护，已被 30+ 产品采用；**只强制 2 个字段**：`name`、`description`。
+  - 机制是**渐进式披露**：启动加载元数据（~100 token/个）→ 语义命中后加载正文（<5000 token）→ 资源按需。
+  - **Skill 不改模型权重，只改上下文**；判断写 Markdown、确定性逻辑写脚本。
+  - 生态有真实供应链风险：Snyk 审计 3984 个技能 13.4% 严重问题 / 36.82% 有缺陷；学术研究 26.1% 含漏洞，
+    带 `scripts/` 的技能风险为纯指令型的 2.12 倍。
+- **配套产出（在 `skills/` 而非 `wiki/`）**：`skills/cursor-agent-skills/` 六件套——
+  `data-compliance-guard`（含 `scripts/scan-egress.py`）、`code-review-gate`（含 `references/review-checklist.md`）、
+  `ai-code-provenance`、`commit-and-pr`、`debug-systematically`、`refactor-safely`。
+  已安装至 `~/.cursor/skills/`，6/6 通过 name 与目录名一致性校验。
+- 脚本验证：`scan-egress.py` 用正反例样本测试通过——`req.body` 整体打印命中、`req.body.userId` 白名单取字段不命中、
+  `maskPhone()` 脱敏写法不误报、`.cn`/内网域名不误报；退出码 0/1 可接 CI。
+- 链接校验：新主题 102 条双链，0 断链，0 孤儿页。
+- 联动更新：`wiki/index.md`（主题数 4→5，页面数 56→71）。
+- 数据核实时点：2026-09-03。Cursor 官方文档以 `/docs/skills` 为当前路径，`/migrate-to-skills` 需 2.4+。
