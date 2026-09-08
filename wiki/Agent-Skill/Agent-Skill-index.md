@@ -2,7 +2,7 @@
 title: AI Agent Skill 索引
 type: index
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-08
 tags: [AI, Agent, Skill, Cursor, 工程效能]
 sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf]
 ---
@@ -30,6 +30,10 @@ sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthro
 | 12 | [[12-Skill安全与企业合规]] | 供应链攻击实测数据 + 治理框架 | 要在公司推 |
 | 13 | [[13-速查表与FAQ]] | frontmatter 全表、命名规则、10 个高频问题 | 忘了就来翻 |
 | 14 | [[14-学习路线与资源]] | 分阶段路线 + 官方与社区资源 | 想系统学 |
+| 15 | [[15-Skill市场与下载渠道]] | 去哪下载经典 Skill：市场清单 + 开发者首选 | 要装现成技能 |
+| 16 | [[16-程序员推荐安装的Skill]] | 装哪些 + 全局/项目级决策：治理类强制项目级进 git | 要配环境 |
+| 17 | [[17-文档Skill]] | 写需求规格/概要设计/详细设计的 Skill 清单与触发词 | 要出文档 |
+| 18 | [[18-通用Skill]] | 架构/质量/提交规范/合规等通用优质 Skill 总览 | 想配全套 |
 
 ## 三句话速览
 
@@ -48,6 +52,10 @@ sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthro
 - [[01-Skill是什么]]
 - [[10-Cursor安装与使用教程]]
 - [[12-Skill安全与企业合规]]
+- [[15-Skill市场与下载渠道]]（去哪下载经典 Skill）
+- [[16-程序员推荐安装的Skill]]（装哪些 + 全局/项目级）
+- [[17-文档Skill]]（写需求/概要/详细设计文档的 Skill）
+- [[18-通用Skill]]（架构/质量/提交规范/合规等通用优质 Skill 总览）
 
 ## 来源
 
