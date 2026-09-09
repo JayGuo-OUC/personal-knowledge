@@ -117,3 +117,64 @@ AI 辅助编程场景下的提交纪律。
 - 链接校验：新主题 102 条双链，0 断链，0 孤儿页。
 - 联动更新：`wiki/index.md`（主题数 4→5，页面数 56→71）。
 - 数据核实时点：2026-09-03。Cursor 官方文档以 `/docs/skills` 为当前路径，`/migrate-to-skills` 需 2.4+。
+
+## 2026-09-08
+
+### Agent-Skill 主题补充（用户主动迭代）
+- **补充「AI Agent Skill」主题 4 篇**：15 Skill 市场与下载渠道 / 16 程序员推荐安装的 Skill / 17 文档 Skill / 18 通用 Skill。
+  并为 15—18 篇的全部外置技能**标注宿主 GitHub 仓库 Star 数**（GitHub API `stargazers_count` 实时抓取，仓库级指标非单技能计数）。
+  - 发现两个仓库已 404 不可用：`smithery/ai`、`dengineproblem/agents-monorepo` → 标 N/A。
+  - 发现 `jabrena/cursor-rules-java` 已改名并入 `jabrena/plinth`。
+- **按「⭐≥1K」门槛重写 16 篇**（本司栈：前端 Vue3+TS+Vite+Element Plus，后端 Spring Cloud+Java+MyBatis+MySQL+Redis）：
+  - 新增达标主力：`antfu/skills` ⭐5.9k（vue/vite/pinia/vitest/vueuse-functions）、`vuejs-ai/skills` ⭐2.8k（Vue3 官方向技能集）、
+    `awesome-skills/code-review-skill` ⭐1.9k（20+ 语言，含 Vue3.5/TS/Java17+SpringBoot3 评审规则，一个顶前后端两套）。
+  - 淘汰未达标：`PatternsDev/skills` ⭐246、`mindrally/skills` ⭐258、`sammcj/agentic-coding` ⭐160。
+  - 结论：**Element Plus / MyBatis / MySQL / Redis / Spring Cloud 在 1K 门槛下无任何公共 Skill** → 补了 4 份自建 SKILL.md 模板。
+  - 顺手修正 mybatis 模板错误：`${param}`（字符串拼接，有注入风险）→ `#{param}`。
+- **新增 19-Cursor内置skill.md**：合并本机实测 25 个（`~/.cursor/skills-cursor/`，`.sync-manifest.json` 全部标记为 Cursor 托管）
+  与官方文档 Built-in 表 19 个，去重得 **26 个**内置技能全表。
+  - 官方有而本机未同步 1 个：`/cursor-blame`；本机有而官方表未列 7 个：`deploy-with-vercel` / `goal` / `new-repo` / `onboard` / `origin` / `rename-chat` / `share`。
+  - 实测标注 **8 个技能设了 `disable-model-invocation: true`（只能 `/` 手动调用）**：`create-subagent`、`deploy-with-vercel`、`goal`、
+    `migrate-to-skills`、`onboard`、`rename-chat`、`review`、`shell`。
+  - 澄清：`/autopilot`（盯 PR）在部分文档镜像中写作 `/babysit`，功能相同，属改名。
+  - 澄清：内置技能目录是 `~/.cursor/skills-cursor/`（**带 `-cursor` 后缀**），与放自己技能的 `~/.cursor/skills/` 是两个目录，前者会被同步覆盖。
+- **联动更新**：`Agent-Skill-index.md`（新增 19 篇目、修正内置技能数 24→25）、`09-Cursor中的Skill全景.md`（内置技能表改为指向 19 篇，避免重复维护）、
+  `wiki/index.md`（Agent-Skill 14→19 篇，总页面 71→76）、本日志。
+- 方法备忘：GitHub API 未认证配额易打满（core 60/hr、search 10/min），**改用 `raw.githubusercontent.com` 抓 README 不受限**；搜索用 `stars:>1000` 限定词可省去逐条过滤。
+
+### 每日整理（2026-09-08 18:00）
+- 按 CLAUDE.md 第八节执行每日流程。
+- `Clippings/` 不存在，无需归类清空。
+- `raw/` 今日新增 6 个珍大户原始数据文件（已落在 `raw/珍大户/` 下）：
+  `master.json`、`master_themed.json`、`all_themed.json`、`digest_master.json`、`kdocs_lines.txt`、`topics_owner.json`。
+  其中 `master_themed.json` 与 `all_themed.json` 为首次入库。
+- 判定为**并入已有**：资料属于已有「珍大户的经济圈」主题，未出现新的独立概念，不新建 wiki 条目。
+- 更新受影响页面：
+  - `wiki/珍大户/珍大户-index.md`：frontmatter sources 补全 6 个 raw 文件，正文「来源」节补充分类数据文件说明，更新 `updated`。
+  - `wiki/珍大户/珍大户-系列脉络.md`：sources 增加 `master_themed.json`、`all_themed.json`，更新 `updated`。
+  - `wiki/珍大户/珍大户-重点必读.md`：sources 增加 `all_themed.json`，更新 `updated`。
+  - `wiki/珍大户/01-15` 全部 15 个主题页：sources 增加 `all_themed.json`，更新 `updated`。
+- `output/` 今日无新增产出；既有 3 份文件（8 月 26、27 日产出）留原地。
+- 轻量链接检查：待产出 daily-log 后由脚本跑。
+
+## 2026-09-09
+
+### 16 篇校验与 skills.sh 口径修正（上午）
+- 将 16 篇每条「技能→仓库」断言逐条打到 `https://www.skills.sh/api/search?q=xxx`（公开 JSON 接口，无需浏览器；注意限流，间隔 ≥1.5s）核对：75 条断言 → **71 通过 / 3 删除 / 1 改名**。
+  - 删除（skills.sh 未收录）：`agent-rules-books`（ciembor，是规则原料非可装技能）、`Cocoon-AI/architecture-diagram-generator`（同名仅在他仓库）、`clean-code`（piomin，GitHub 有但 skills.sh 未索引）。
+  - 改名：`Agents365-ai/drawio-skill` → 小写 `agents365-ai/drawio-skill`。
+  - 订正安装量误读：上轮把「仓库某模块查询下技能安装量之和」误当单技能安装量（`webapp-testing` 304k→152.7k、`code-review` 1.32M→513.7k、superpowers 评审 819k→188k/223k 等）。
+- 确认 `spring-boot-engineer` / `java-architect` / `java-code-review` / `api-contract-review` / `design-patterns`（piomin/claude-ai-spring-boot）**5 个均已被 skills.sh 收录**（设计模式 53、其余各 1 安装量），GitHub 仓库目录树也佐证；并挖到一个漏列的 `code-quality`（56 安装）。
+
+### 新增 20-Skill后端试用.md（下午）
+- 用户要求在 Agent-Skill 文件夹下新增「20-Skill后端试用.md」，在 `E:/guojian/01project/sjz/sjz/sjz-back` 用这些 skill 完成任务并写入结果。
+- **关键限制确认**：本机 Cursor（`D:/apps/cursor`）只有 IDE 内部 agent 运行时扩展，**无程序化拉起的非交互 CLI 入口**（`cursor` 主命令仅 IDE 启动器，不支持 `--agent/--ask/--run/--headless`）。故采用等价离线验证：读取 sjz-back 已装的 21 个 SKILL.md 规则原文，逐条套真实代码做静态分析。
+- 已装 21 技能（sjz-back/skills-lock.json）：ecc 9（backend/mysql/redis/java-coding-standards/database-*/springboot-*）、piomin 5、jeffallan 4、awesome-copilot 4、wshobson 1。
+- 真实命中（附文件:行号证据链）：
+  - 🔴 SQL 注入 2 处：`MajorAlarmMapper.xml:247/318` `delete ... where id = ${id}`（值位置 `${}`，应改 `#{}`）；调用链 `deleteAlarmConfig(Map)` → `param.get("id")` 外部可控 → `${id}` 字符串拼接。
+  - 🟠 多写无事务 16 处：`ServiceImpl` 142 个中 131 个无 `@Transactional`，其中 16 个多步写无事务（含 `MajorAlarmServiceImpl` 7 写操作，且 `deleteAlarmConfig` 两步删表无事务，留孤儿数据风险）。
+  - 🟡 `SELECT *` 24 文件；`LIMIT offset,size` 深分页 3 处；`System.out.println` 30 文件；`printStackTrace` 38 文件。
+  - 🟢 Redis 仅 4 文件且收口到 `hi-libs-redis` 模块（符合 redis-patterns 集中管理思想）。分页统一 MyBatis-Plus（86 文件），未用 PageHelper。
+- 报告含修复建议片段（改 `#{}`、补 `@Transactional(rollbackFor=Exception.class)`、keyset 游标、统一 SLF4J）。
+- 联动更新：`Agent-Skill-index.md`（加 20 篇目 + 相关 + 来源）、`wiki/index.md`（Agent-Skill 20 篇 / 总页面 77）、本日志。
+- 临时扫描脚本 `_scan.py` / `_scan.txt` 已清理。

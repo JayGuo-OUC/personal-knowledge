@@ -11,7 +11,7 @@ sources: [cursor.com/docs/skills, 本机实测 ~/.cursor/skills-cursor/]
 
 ## 摘要
 
-Cursor 自 2.x 起原生支持 Agent Skills（开放标准）。技能从 4 个主目录 + 4 个兼容目录加载，支持 `paths`、`disable-model-invocation`、`icon`、`color` 等扩展字段。调用有三种：`/skill-name` 显式调用、`@skill-name` 附加为上下文、模型自动匹配。任何技能都能当 **Custom Mode**（`Alt+Enter`）常驻整个会话。Cursor 还内置了 24 个官方技能。
+Cursor 自 2.x 起原生支持 Agent Skills（开放标准）。技能从 4 个主目录 + 4 个兼容目录加载，支持 `paths`、`disable-model-invocation`、`icon`、`color` 等扩展字段。调用有三种：`/skill-name` 显式调用、`@skill-name` 附加为上下文、模型自动匹配。任何技能都能当 **Custom Mode**（`Alt+Enter`）常驻整个会话。Cursor 还内置了 25 个官方技能（与官方文档 Built-in 表合并去重后 26 个，详见 [[19-cursor内置skill]]）。
 
 ## 正文
 
@@ -59,36 +59,14 @@ Windows 实际路径：`C:\Users\<用户名>\.cursor\skills\`
 
 ### 内置技能（Cursor 官方自带）
 
-本机实测 `~/.cursor/skills-cursor/` 下 24 个：
+本机实测 `~/.cursor/skills-cursor/` 下 **25 个**；与官方文档 Built-in 表合并去重后 **26 个**。
 
-| 技能 | 作用 |
-|------|------|
-| `/automate` | 创建 Automations（定时、Slack、GitHub 事件触发） |
-| `/autopilot` | 盯 PR，处理反馈、冲突、失败检查 |
-| `/canvas` | 创建随对话渲染的交互式 React artifact |
-| `/create-hook` | 创建 Cursor hooks 并更新 `hooks.json` |
-| `/create-rule` | 创建 Cursor rules |
-| `/create-skill` | **创建新技能**（引导式，推荐用它起手） |
-| `/create-subagent` | 创建自定义子代理 |
-| `/goal` | 目标导向执行 |
-| `/loop` | 按间隔重复执行提示词或技能 |
-| `/migrate-to-skills` | 把 Rules / Commands 转成 Skills |
-| `/new-repo` | 新建仓库脚手架 |
-| `/onboard` | 项目上手引导 |
-| `/origin` | — |
-| `/rename-chat` | 重命名会话 |
-| `/review` | 选择并运行合适的代码评审代理 |
-| `/review-bugbot` | 用 Bugbot 查 bug 与回归 |
-| `/review-security` | 安全漏洞评审 |
-| `/sdk` | 用 Cursor SDK 构建应用 |
-| `/share` | 分享 |
-| `/shell` | 把文本当 shell 命令原样执行 |
-| `/split-to-prs` | 把大改动拆成多个小 PR |
-| `/statusline` | 配置 CLI 状态栏 |
-| `/update-cli-config` | 更新 `~/.cursor/cli-config.json` |
-| `/update-cursor-settings` | 更新 Cursor/VS Code 设置 |
+**完整清单、逐个作用、以及哪些技能只能 `/` 手动调用 → [[19-cursor内置skill]]。**
 
-> 官方文档还提到 `/cursor-blame`（追查 AI 产出的改动与对应提示词）。
+本文只保留与「加载目录」相关的两条结论：
+
+- 内置技能落在 **`~/.cursor/skills-cursor/`（注意带 `-cursor` 后缀）**，与上面的 `~/.cursor/skills/` 是**两个不同目录**。前者由 Cursor 托管、随客户端同步覆盖，**不要往里放自己的技能**；你自己的放 `~/.cursor/skills/`（全局）或项目 `.cursor/skills/`。
+- 内置技能同样支持 Custom Mode（`Alt+Enter`），可整个会话常驻。
 
 ### 嵌套目录与 monorepo
 
@@ -124,8 +102,9 @@ apps/web/.cursor/skills/         # 嵌套项目目录
 - [[02-Agent-Skills开放标准与生态全景]]
 - [[03-SKILL.md结构与frontmatter详解]]
 - [[11-实战技能包六件套]]
+- [[19-cursor内置skill]]（内置技能全表与作用）
 
 ## 来源
 
 - https://cursor.com/docs/skills
-- 本机实测：`C:\Users\郭健\.cursor\skills-cursor\`（`.sync-manifest.json` + 24 个 SKILL.md）
+- 本机实测：`~/.cursor/skills-cursor\`（`.sync-manifest.json` + 25 个 SKILL.md，2026-09-08 同步）

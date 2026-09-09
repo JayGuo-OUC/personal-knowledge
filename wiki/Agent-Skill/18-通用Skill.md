@@ -17,7 +17,9 @@ sources: [skills.sh, github.com/vercel-labs/skills, github.com/wshobson/agents, 
 
 ### 第一步：先装「元技能」find-skills
 
-- `find-skills`（vercel-labs/skills，**1.4M+ 安装**，全生态第一）：用自然语言搜并安装其它 Skill 的元技能
+- `find-skills`（vercel-labs/skills，**1.4M+ 安装**，⭐30.6k，全生态第一）：用自然语言搜并安装其它 Skill 的元技能
+
+> ⭐ 说明：表格中 ⭐ 数值为该技能**宿主 GitHub 仓库**的 Star 数（一个仓库常含多个 Skill，故为仓库级指标，并非单技能独立计数）。`smithery/ai` 与 `dengineproblem/agents-monorepo` 当前 GitHub 返回 404（仓库已不可访问），标 N/A。
 - 想装什么直接说即可，不必每次手动查市场
 - 安装（全局）：`npx skills add vercel-labs/skills --skill find-skills -g`
 - 它是后续所有安装的入口，建议**全局**安装（个人通用）
@@ -26,9 +28,9 @@ sources: [skills.sh, github.com/vercel-labs/skills, github.com/wshobson/agents, 
 
 | 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
 |-----------|----------------------|------------------------|----------|
-| `architecture-decision-records`（wshobson/agents，15.3k 安装） | "记架构决策"、"出 ADR"、"技术选型留痕"、"MADR 模板"、"设计评审" | `npx skills add wshobson/agents --skill architecture-decision-records` | **项目级 + 进 git** |
-| `adr-skill`（vercel/ai） | "把决策写成可执行 ADR"、"技术决策含实施方案"、"为什么这么选" | `npx skills add vercel/ai --skill adr-skill` | **项目级 + 进 git** |
-| `034-architecture-diagrams`（jabrena/cursor-rules-java） | "画 C4 模型"、"UML 类/序列/状态机图"、"ER 图" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
+| `architecture-decision-records`（wshobson/agents · ⭐39.5k，15.3k 安装） | "记架构决策"、"出 ADR"、"技术选型留痕"、"MADR 模板"、"设计评审" | `npx skills add wshobson/agents --skill architecture-decision-records` | **项目级 + 进 git** |
+| `adr-skill`（vercel/ai · ⭐26.6k） | "把决策写成可执行 ADR"、"技术决策含实施方案"、"为什么这么选" | `npx skills add vercel/ai --skill adr-skill` | **项目级 + 进 git** |
+| `034-architecture-diagrams`（jabrena/cursor-rules-java → jabrena/plinth · ⭐437） | "画 C4 模型"、"UML 类/序列/状态机图"、"ER 图" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
 
 > 技术负责人的核心产出之一是**技术决策留痕**与**架构图**。ADR 类技能把"为什么选 Spring Cloud / 为什么用 MyBatis 而非 JPA"固化成可审计记录；`034-architecture-diagrams` 用 C4 + PlantUML 一键出图，写进概要/详细设计（联动 [[17-文档Skill]]）。
 
@@ -36,9 +38,9 @@ sources: [skills.sh, github.com/vercel-labs/skills, github.com/wshobson/agents, 
 
 | 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
 |-----------|----------------------|------------------------|----------|
-| `code-review`（sammcj/agentic-coding） | "做代码评审"、"review my changes"、"严格自审" | `npx skills add sammcj/agentic-coding --skill code-review` | 全局（个人）/ 项目级（团队强制门禁） |
-| `tdd`（mattpocock） | "用 TDD 写"、"先写测试再实现"、"red-green-refactor" | `npx skills add mattpocock/skills --skill tdd` | 全局 |
-| `grill-me`（mattpocock） | "审查 TS 类型安全"、"抓 any 滥用"、"类型审查" | `npx skills add mattpocock/skills --skill grill-me` | 全局 |
+| `code-review`（sammcj/agentic-coding · ⭐160） | "做代码评审"、"review my changes"、"严格自审" | `npx skills add sammcj/agentic-coding --skill code-review` | 全局（个人）/ 项目级（团队强制门禁） |
+| `tdd`（mattpocock/skills · ⭐256k） | "用 TDD 写"、"先写测试再实现"、"red-green-refactor" | `npx skills add mattpocock/skills --skill tdd` | 全局 |
+| `grill-me`（mattpocock/skills · ⭐256k） | "审查 TS 类型安全"、"抓 any 滥用"、"类型审查" | `npx skills add mattpocock/skills --skill grill-me` | 全局 |
 
 > 代码质量是团队红线。详见 [[16-程序员推荐安装的Skill]] 的测试/评审小节与贵司 `ai-code-review` 门禁。
 
@@ -46,9 +48,9 @@ sources: [skills.sh, github.com/vercel-labs/skills, github.com/wshobson/agents, 
 
 | 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
 |-----------|----------------------|------------------------|----------|
-| `conventional-commits`（tigrisdata/skills） | "按约定式提交"、"生成 CHANGELOG"、"语义化版本" | `npx skills add tigrisdata/skills --skill conventional-commits` | 全局 |
-| `git-conventional-commits`（eva813/skills-base） | "规范 git 提交"、"feat/fix/docs 分类"、"提交信息校验" | `npx skills add eva813/skills-base --skill git-conventional-commits` | 全局 |
-| `git-commit-workflow`（laurigates/claude-plugins） | "提交前上下文收集"、"显式暂存"、"关联 issue" | `npx skills add laurigates/claude-plugins --skill git-commit-workflow` | 全局 |
+| `conventional-commits`（tigrisdata/skills · ⭐3） | "按约定式提交"、"生成 CHANGELOG"、"语义化版本" | `npx skills add tigrisdata/skills --skill conventional-commits` | 全局 |
+| `git-conventional-commits`（eva813/skills-base · ⭐2） | "规范 git 提交"、"feat/fix/docs 分类"、"提交信息校验" | `npx skills add eva813/skills-base --skill git-conventional-commits` | 全局 |
+| `git-commit-workflow`（laurigates/claude-plugins · ⭐58） | "提交前上下文收集"、"显式暂存"、"关联 issue" | `npx skills add laurigates/claude-plugins --skill git-commit-workflow` | 全局 |
 
 > 统一的提交规范 = 自动 CHANGELOG + 语义化发版 + 可审计变更。个人效率类，建议**全局**。
 
@@ -56,9 +58,9 @@ sources: [skills.sh, github.com/vercel-labs/skills, github.com/wshobson/agents, 
 
 | 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
 |-----------|----------------------|------------------------|----------|
-| `work-define`（juanca202/sdd-devkit） | "写需求规格说明书"、"拆解用户故事"、"补验收标准" | `npx skills add juanca202/sdd-devkit --skill work-define` | **项目级 + 进 git** |
-| `design-define`（juanca202/sdd-devkit） | "写详细设计"、"数据模型/API/流程图规范" | `npx skills add juanca202/sdd-devkit --skill design-define` | **项目级 + 进 git** |
-| `openapi-documentation`（dengineproblem） | "写接口契约"、"OpenAPI 3.0 规范" | `npx skills add dengineproblem/agents-monorepo --skill openapi-documentation` | **项目级 + 进 git** |
+| `work-define`（juanca202/sdd-devkit · ⭐0） | "写需求规格说明书"、"拆解用户故事"、"补验收标准" | `npx skills add juanca202/sdd-devkit --skill work-define` | **项目级 + 进 git** |
+| `design-define`（juanca202/sdd-devkit · ⭐0） | "写详细设计"、"数据模型/API/流程图规范" | `npx skills add juanca202/sdd-devkit --skill design-define` | **项目级 + 进 git** |
+| `openapi-documentation`（dengineproblem/agents-monorepo · ⭐N/A，GitHub 404） | "写接口契约"、"OpenAPI 3.0 规范" | `npx skills add dengineproblem/agents-monorepo --skill openapi-documentation` | **项目级 + 进 git** |
 
 > 三类工程文档（需求/概要/详细）的完整 Skill 清单见 [[17-文档Skill]]，此处仅列代表项。
 
@@ -72,8 +74,8 @@ sources: [skills.sh, github.com/vercel-labs/skills, github.com/wshobson/agents, 
 
 ### 六、技术栈专项（详见 [[16-程序员推荐安装的Skill]]）
 
-- **前端**：`vue-composition-api`、`vue-performance`（PatternsDev）、`frontend-design`（anthropics）、`grill-me`（mattpocock，TS）、`element-plus`（自建进 git）
-- **后端**：`java`（mindrally）、`spring-boot-engineer` / `java-architect` / `java-code-review` / `api-contract-review`（piomin）、`spring-boot-development`（smithery/ai）、`mysql-best-practices` / `sql-optimization-patterns`、`mybatis`（自建进 git）
+- **前端**：`vue-composition-api`、`vue-performance`（PatternsDev/skills · ⭐246）、`frontend-design`（anthropics/skills · ⭐175k）、`grill-me`（mattpocock/skills · ⭐256k，TS）、`element-plus`（自建进 git）
+- **后端**：`java`（mindrally/skills · ⭐258）、`spring-boot-engineer` / `java-architect` / `java-code-review` / `api-contract-review`（piomin/claude-ai-spring-boot · ⭐1.3k）、`spring-boot-development`（smithery/ai · ⭐N/A，仓库 GitHub 404）、`mysql-best-practices` / `sql-optimization-patterns`、`mybatis`（自建进 git）
 - 完整触发词与安装命令见 [[16-程序员推荐安装的Skill]]。
 
 ### 安装命令（skills.sh 统一体系）

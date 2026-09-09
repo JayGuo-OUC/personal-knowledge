@@ -17,7 +17,9 @@ sources: [skills.sh, github.com/juanca202/sdd-devkit, github.com/jabrena/cursor-
 
 ### 第一步：先装「元技能」find-skills
 
-- `find-skills`（vercel-labs/skills，**1.4M+ 安装**，全生态第一）：用自然语言搜并安装其它 Skill 的元技能
+- `find-skills`（vercel-labs/skills，**1.4M+ 安装**，⭐30.6k，全生态第一）：用自然语言搜并安装其它 Skill 的元技能
+
+> ⭐ 说明：表格中 ⭐ 数值为该技能**宿主 GitHub 仓库**的 Star 数（一个仓库常含多个 Skill，故为仓库级指标，并非单技能独立计数）。`smithery/ai` 与 `dengineproblem/agents-monorepo` 当前 GitHub 返回 404（仓库已不可访问），标 N/A。
 - 想装什么直接说（"找个写需求规格说明书的技能"）即可，不必每次手动查市场
 - 安装（全局）：`npx skills add vercel-labs/skills --skill find-skills -g`
 - 它是后续所有安装的入口，建议**全局**安装（个人通用）
@@ -26,9 +28,9 @@ sources: [skills.sh, github.com/juanca202/sdd-devkit, github.com/jabrena/cursor-
 
 | 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
 |-----------|----------------------|------------------------|----------|
-| `work-define`（juanca202/sdd-devkit） | "写需求规格说明书"、"拆解用户故事"、"补验收标准"、"功能需求清单" | `npx skills add juanca202/sdd-devkit --skill work-define` | **项目级 + 进 git** |
-| `031-architecture-adr-functional-requirements`（jabrena/plinth） | "为功能需求/REST API 出 ADR"、"需求决策记录" | `npx skills add jabrena/plinth --skill 031-architecture-adr-functional-requirements` | **项目级 + 进 git** |
-| `uml`（markdown-viewer）— 用例图 | "画用例图"、"功能交互图"、"角色与用例" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
+| `work-define`（juanca202/sdd-devkit · ⭐0） | "写需求规格说明书"、"拆解用户故事"、"补验收标准"、"功能需求清单" | `npx skills add juanca202/sdd-devkit --skill work-define` | **项目级 + 进 git** |
+| `031-architecture-adr-functional-requirements`（jabrena/plinth · ⭐437） | "为功能需求/REST API 出 ADR"、"需求决策记录" | `npx skills add jabrena/plinth --skill 031-architecture-adr-functional-requirements` | **项目级 + 进 git** |
+| `uml`（markdown-viewer/skills · ⭐3.3k）— 用例图 | "画用例图"、"功能交互图"、"角色与用例" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
 
 > `work-define` 会把需求拆成带标识（US-XX）的用户故事 + 验收标准，正好对应 SRS 的功能需求与验收准则章节；`uml` 的 use case 图用于功能建模。
 
@@ -36,10 +38,10 @@ sources: [skills.sh, github.com/juanca202/sdd-devkit, github.com/jabrena/cursor-
 
 | 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
 |-----------|----------------------|------------------------|----------|
-| `architecture-decision-records`（wshobson/agents，15.3k 安装） | "记架构决策"、"出 ADR"、"技术选型留痕"、"MADR 模板" | `npx skills add wshobson/agents --skill architecture-decision-records` | **项目级 + 进 git** |
-| `adr-skill`（vercel/ai） | "把决策写成可执行 ADR"、"技术决策含实施方案" | `npx skills add vercel/ai --skill adr-skill` | **项目级 + 进 git** |
-| `034-architecture-diagrams`（jabrena/cursor-rules-java） | "画 C4 模型"、"上下文/容器/组件图"、"ER 图（库表设计）" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
-| `uml`（markdown-viewer）— 组件图/部署图 | "画组件图"、"部署架构图" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
+| `architecture-decision-records`（wshobson/agents · ⭐39.5k，15.3k 安装） | "记架构决策"、"出 ADR"、"技术选型留痕"、"MADR 模板" | `npx skills add wshobson/agents --skill architecture-decision-records` | **项目级 + 进 git** |
+| `adr-skill`（vercel/ai · ⭐26.6k） | "把决策写成可执行 ADR"、"技术决策含实施方案" | `npx skills add vercel/ai --skill adr-skill` | **项目级 + 进 git** |
+| `034-architecture-diagrams`（jabrena/cursor-rules-java → jabrena/plinth · ⭐437） | "画 C4 模型"、"上下文/容器/组件图"、"ER 图（库表设计）" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
+| `uml`（markdown-viewer/skills · ⭐3.3k）— 组件图/部署图 | "画组件图"、"部署架构图" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
 
 > 概要设计 = 模块划分 + 技术选型 + 部署架构。`architecture-decision-records` / `adr-skill` 管"为什么这么选"（ADR 章节），`034-architecture-diagrams` 用 C4（Context→Container→Component）画分层架构与 ER 图，天然对应概要设计模板。
 
@@ -47,11 +49,11 @@ sources: [skills.sh, github.com/juanca202/sdd-devkit, github.com/jabrena/cursor-
 
 | 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
 |-----------|----------------------|------------------------|----------|
-| `034-architecture-diagrams`（jabrena） | "画类图"、"序列图"、"状态机图"、"ER 图" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
-| `uml`（markdown-viewer） | "UML 类图/时序图/状态图"、"PlantUML 语法" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
-| `design-define`（juanca202/sdd-devkit） | "写详细设计文档"、"数据模型/API/流程图规范"、"技术规格书" | `npx skills add juanca202/sdd-devkit --skill design-define` | **项目级 + 进 git** |
-| `openapi-documentation`（dengineproblem） | "写接口契约"、"OpenAPI 3.0 规范"、"Swagger 文档" | `npx skills add dengineproblem/agents-monorepo --skill openapi-documentation` | **项目级 + 进 git** |
-| `api-documentation-generator`（aiskillstore） | "从代码生成 OpenAPI"、"自动出接口文档" | `npx skills add aiskillstore/marketplace --skill api-documentation-generator` | **项目级 + 进 git** |
+| `034-architecture-diagrams`（jabrena/plinth · ⭐437） | "画类图"、"序列图"、"状态机图"、"ER 图" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
+| `uml`（markdown-viewer/skills · ⭐3.3k） | "UML 类图/时序图/状态图"、"PlantUML 语法" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
+| `design-define`（juanca202/sdd-devkit · ⭐0） | "写详细设计文档"、"数据模型/API/流程图规范"、"技术规格书" | `npx skills add juanca202/sdd-devkit --skill design-define` | **项目级 + 进 git** |
+| `openapi-documentation`（dengineproblem/agents-monorepo · ⭐N/A，GitHub 404） | "写接口契约"、"OpenAPI 3.0 规范"、"Swagger 文档" | `npx skills add dengineproblem/agents-monorepo --skill openapi-documentation` | **项目级 + 进 git** |
+| `api-documentation-generator`（aiskillstore/marketplace · ⭐418） | "从代码生成 OpenAPI"、"自动出接口文档" | `npx skills add aiskillstore/marketplace --skill api-documentation-generator` | **项目级 + 进 git** |
 
 > 详细设计 = 类/对象设计 + 接口契约 + 关键流程。用 `034-architecture-diagrams` + `uml` 出类图/时序图/状态机，`design-define` 把数据模型、API、流程标准化成带 `MD-XX/API-XX/FL-XX` 标识的技术规格，`openapi-documentation` 把 REST 接口写成可执行契约（对应你们 Spring Cloud 的微服务接口）。
 

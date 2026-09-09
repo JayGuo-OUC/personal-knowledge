@@ -2,9 +2,9 @@
 title: 珍大户的经济圈（总索引）
 type: index
 created: 2026-09-02
-updated: 2026-09-02
+updated: 2026-09-08
 tags: [珍大户, 索引, 知识星球]
-sources: [raw/珍大户/master.json, 星球目录时间线（七周年重制版）]
+sources: [raw/珍大户/master.json, raw/珍大户/master_themed.json, raw/珍大户/all_themed.json, raw/珍大户/digest_master.json, raw/珍大户/kdocs_lines.txt, raw/珍大户/topics_owner.json, 星球目录时间线（七周年重制版）]
 ---
 
 # 珍大户的经济圈（总索引）
@@ -74,6 +74,8 @@ sources: [raw/珍大户/master.json, 星球目录时间线（七周年重制版�
 ## 来源
 
 - raw/珍大户/master.json —— 857 条官方精华正文与元数据
+- raw/珍大户/master_themed.json —— 1024 条带主题/系列标注的精华正文与元数据
+- raw/珍大户/all_themed.json —— 876 条按 15 个主题聚类的精华条目（与 wiki/珍大户/ 主题页一一对应）
 - raw/珍大户/digest_master.json —— 官方目录 2010 条解析结果
 - raw/珍大户/kdocs_lines.txt —— 官方目录文档全文
 - raw/珍大户/topics_owner.json —— 星球原始抓取数据

@@ -2,7 +2,7 @@
 title: AI Agent Skill 索引
 type: index
 created: 2026-09-03
-updated: 2026-09-08
+updated: 2026-09-09
 tags: [AI, Agent, Skill, Cursor, 工程效能]
 sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf]
 ---
@@ -34,6 +34,8 @@ sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthro
 | 16 | [[16-程序员推荐安装的Skill]] | 装哪些 + 全局/项目级决策：治理类强制项目级进 git | 要配环境 |
 | 17 | [[17-文档Skill]] | 写需求规格/概要设计/详细设计的 Skill 清单与触发词 | 要出文档 |
 | 18 | [[18-通用Skill]] | 架构/质量/提交规范/合规等通用优质 Skill 总览 | 想配全套 |
+| 19 | [[19-cursor内置skill]] | Cursor 自带 26 个内置技能全表 + 哪些只能 `/` 手动调用 | 想知道 Cursor 自带什么 |
+| 20 | [[20-Skill后端试用]] | 在 sjz-back 真实代码上套用已装 21 个 Skill 的试用报告（含 SQL 注入/事务等真实缺陷） | 要验证 skill 到底有没有用 |
 
 ## 三句话速览
 
@@ -56,6 +58,8 @@ sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthro
 - [[16-程序员推荐安装的Skill]]（装哪些 + 全局/项目级）
 - [[17-文档Skill]]（写需求/概要/详细设计文档的 Skill）
 - [[18-通用Skill]]（架构/质量/提交规范/合规等通用优质 Skill 总览）
+- [[19-cursor内置skill]]（Cursor 自带 26 个内置技能全表，含哪些只能 `/` 手动调用）
+- [[20-Skill后端试用]]（在 sjz-back 真实代码上套用已装 Skill 的试用报告，含 SQL 注入/事务等真实缺陷证据）
 
 ## 来源
 
@@ -64,5 +68,6 @@ sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthro
 - Anthropic《The Complete Guide to Building Skill for Claude》PDF
 - Anthropic 官方示例库：https://github.com/anthropics/skills
 - 参考实现与校验器：https://github.com/agentskills/agentskills
-- 本机实测：`~/.cursor/skills-cursor/` 下 Cursor 内置 24 个技能（`automate`/`autopilot`/`canvas`/`create-skill`/`review`/`loop` …）
+- 本机实测：`~/.cursor/skills-cursor/` 下 Cursor 内置 25 个技能（`automate`/`autopilot`/`canvas`/`create-skill`/`review`/`loop` …），完整清单与作用见 [[19-cursor内置skill]]
+- 实战试用：在 `E:\guojian\01project\sjz\sjz-back` 套用已装 21 个 Skill 的静态分析结果与修复建议，见 [[20-Skill后端试用]]
 - 安全实测数据：Snyk ToxicSkills 报告、arXiv 2602.12430（见 [[12-Skill安全与企业合规]]）
