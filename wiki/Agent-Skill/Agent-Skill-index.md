@@ -32,10 +32,15 @@ sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthro
 | 14 | [[14-学习路线与资源]] | 分阶段路线 + 官方与社区资源 | 想系统学 |
 | 15 | [[15-Skill市场与下载渠道]] | 去哪下载经典 Skill：市场清单 + 开发者首选 | 要装现成技能 |
 | 16 | [[16-程序员推荐安装的Skill]] | 装哪些 + 全局/项目级决策：治理类强制项目级进 git | 要配环境 |
-| 17 | [[17-文档Skill]] | 写需求规格/概要设计/详细设计的 Skill 清单与触发词 | 要出文档 |
-| 18 | [[18-通用Skill]] | 架构/质量/提交规范/合规等通用优质 Skill 总览 | 想配全套 |
+| 17 | [[17-文档Skill]] | 需求规格/概要设计/详细设计/用户手册四类文档 skill（7 个主装 + 3 个配套），installs≥1K | 要出交付文档 |
+| 18 | [[18-通用Skill]] | 架构改进/评审/调试/重构/提交/安全 7 个通用 skill（不绑定语言栈），installs≥1K | 任何项目都该配 |
 | 19 | [[19-cursor内置skill]] | Cursor 自带 26 个内置技能全表 + 哪些只能 `/` 手动调用 | 想知道 Cursor 自带什么 |
-| 20 | [[20-Skill后端试用]] | 在 sjz-back 真实代码上套用已装 21 个 Skill 的试用报告（含 SQL 注入/事务等真实缺陷） | 要验证 skill 到底有没有用 |
+| 20 | [[20-后端Skill试用]] | 在 sjz-back 上把 26 个 skill 逐个跑一遍的适用性体检（通过 0 · 部分通过 17 · 未通过 9） | 想知道每个 skill 到底适不适合本项目 |
+| 21 | [[21-前端Skill试用]] | 在 sjz-front 上把 20 个前端 skill 逐个跑一遍（PASS 6 · WARN 9 · FAIL 5，React 系 skill 全军覆没） | 要配前端项目 / 判断哪些 skill 该停用 |
+| 22 | [[22-Skill现有技术栈]] | 按公司栈（Java/SpringCloud/MyBatis/MySQL/Redis/Kafka + Vue3/TS/ElementPlus + UI 还原）重做的选型，installs≥1K、每方向仅一个 | 要按自己技术栈配一套 skill |
+| 23 | [[23-skill主流技术栈]] | 不受版本约束的主流栈版本：16 个可安装 + MyBatis 自建，含 UI 还原链路与验证状态标注 | 新项目 / 按主流版本配 skill |
+| 24 | [[24-软件开发Skill]] | 通用软件工程师按 **skills.sh 安装量从高到低**的 Skill 推荐，**每个 Skill 标注详细使用场景**（纯 skills.sh 数据源） | 只想按「高安装量」挑最稳的装、并看清各自适用时机 |
+| 25 | [[25-开发Skill最佳实践]] | **按真实开发工作流**（需求→概要→详细→编码→Git→接口文档→测试）组织的 Skill 安装与使用最佳实践方案，适配 Java/Vue3 栈 + Cursor | 想要一套「照着工作流装、照着节奏用」的可落地方案 |
 
 ## 三句话速览
 
@@ -56,10 +61,15 @@ sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthro
 - [[12-Skill安全与企业合规]]
 - [[15-Skill市场与下载渠道]]（去哪下载经典 Skill）
 - [[16-程序员推荐安装的Skill]]（装哪些 + 全局/项目级）
-- [[17-文档Skill]]（写需求/概要/详细设计文档的 Skill）
-- [[18-通用Skill]]（架构/质量/提交规范/合规等通用优质 Skill 总览）
+- [[17-文档Skill]]（需求规格/概要设计/详细设计/用户手册四类文档 skill，7 主装 + 3 配套）
+- [[18-通用Skill]]（架构改进/评审/调试/重构/提交/安全 7 个通用 skill，不绑定语言栈）
 - [[19-cursor内置skill]]（Cursor 自带 26 个内置技能全表，含哪些只能 `/` 手动调用）
-- [[20-Skill后端试用]]（在 sjz-back 真实代码上套用已装 Skill 的试用报告，含 SQL 注入/事务等真实缺陷证据）
+- [[20-后端Skill试用]]（sjz-back 全量 26 个 skill 逐个跑的适用性体检，广度视角）
+- [[21-前端Skill试用]]（sjz-front 前端 20 个 skill 的同款体检，与 20 篇构成前后端完整对照）
+- [[22-Skill现有技术栈]]（按公司栈重做的选型清单：17 个可安装 + 2 个自建，含安装命令与版本护栏）
+- [[23-skill主流技术栈]]（不受版本约束的主流栈版本：16 个可安装 + MyBatis 自建，与 22 篇互为姐妹篇）
+- [[24-软件开发Skill]]（通用软件工程师按 skills.sh 安装量排序的推荐，每个 Skill 附详细使用场景，纯 skills.sh 数据源）
+- [[25-开发Skill最佳实践]]（按真实开发工作流组织的 Skill 安装与使用方案：需求→概要→详细→编码→Git→接口文档→测试，适配 Java/Vue3 + Cursor）
 
 ## 来源
 
@@ -69,5 +79,5 @@ sources: [agentskills.io/specification, cursor.com/docs/skills, resources.anthro
 - Anthropic 官方示例库：https://github.com/anthropics/skills
 - 参考实现与校验器：https://github.com/agentskills/agentskills
 - 本机实测：`~/.cursor/skills-cursor/` 下 Cursor 内置 25 个技能（`automate`/`autopilot`/`canvas`/`create-skill`/`review`/`loop` …），完整清单与作用见 [[19-cursor内置skill]]
-- 实战试用：在 `E:\guojian\01project\sjz\sjz-back` 套用已装 21 个 Skill 的静态分析结果与修复建议，见 [[20-Skill后端试用]]
+- 实战试用：在 `E:\guojian\01project\sjz\sjz-back` 套用已装 26 个 Skill 的适用性体检结果，见 [[20-后端Skill试用]]；前端对照见 [[21-前端Skill试用]]
 - 安全实测数据：Snyk ToxicSkills 报告、arXiv 2602.12430（见 [[12-Skill安全与企业合规]]）

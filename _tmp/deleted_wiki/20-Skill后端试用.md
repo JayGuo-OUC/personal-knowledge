@@ -4,7 +4,6 @@ created: 2026-09-09
 updated: 2026-09-09
 tags: [AI, Agent, Skill, Cursor, 试用, 代码审查, SQL注入, 事务, sjz-back, MySQL, Redis]
 sources: [E:/guojian/01project/sjz/sjz-back/.agents/skills, https://www.skills.sh/]
-related: [[16-程序员推荐安装的Skill]], [[19-cursor内置skill]], [[18-通用Skill]]
 ---
 
 # 20-Skill后端试用：在 sjz-back 项目上套用推荐 Skill

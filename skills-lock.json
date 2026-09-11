@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "api-documentation-generator": {
+      "source": "sickn33/agentic-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/api-documentation-generator/SKILL.md",
+      "computedHash": "e747bc21fd479257bb88f4ad5e144951a69898b100eff3c927a0222257c83b96"
+    },
+    "api-security-testing": {
+      "source": "usestrix/strix",
+      "sourceType": "github",
+      "skillPath": "skills/api-security-testing/SKILL.md",
+      "computedHash": "f1ae8b66cf139807a78dde2b50167ae628635a6c026c17edd864b6c6a65cec5c"
+    },
+    "spring-boot-openapi-documentation": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-kit-java/skills/spring-boot-openapi-documentation/SKILL.md",
+      "computedHash": "bdd0f7da4a072d014a9e65235773cc3f38ca0d0925edd5d3fe85ab33b29bcd9d"
+    },
+    "typescript-expert": {
+      "source": "sickn33/agentic-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/typescript-expert/SKILL.md",
+      "computedHash": "b4623290742a2319a2c6aca09c62438a796c399f65aac6facd7273f9b144c8e7"
+    },
+    "unit-test-wiremock-rest-api": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-kit-java/skills/unit-test-wiremock-rest-api/SKILL.md",
+      "computedHash": "99314c583f7cf9c0027c4471ace80424026695b8fcf28762c12149e6062fee43"
+    }
+  }
+}

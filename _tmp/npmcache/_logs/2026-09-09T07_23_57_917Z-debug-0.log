@@ -1,0 +1,53 @@
+0 verbose cli C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\node.exe C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.7
+2 info using node@v22.22.2
+3 silly config load:file:C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\node_modules\npm\npmrc
+4 silly config load:file:E:\guojian\01project\sjz\sjz-front\.npmrc
+5 silly config load:file:C:\Users\lenovo\.npmrc
+6 silly config load:file:C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\etc\npmrc
+7 verbose title npm exec skills add anthropics/skills --skill frontend-design -y --agent *
+8 verbose argv "exec" "--yes" "--" "skills" "add" "anthropics/skills" "--skill" "frontend-design" "-y" "--agent" "*"
+9 verbose logfile logs-max:10 dir:E:\guojian\993学习资料\_tmp\npmcache\_logs\2026-09-09T07_23_57_917Z-
+10 verbose logfile E:\guojian\993学习资料\_tmp\npmcache\_logs\2026-09-09T07_23_57_917Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+14 http fetch GET 200 https://registry.npmjs.org/skills 523ms (cache revalidated)
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+17 silly idealTree buildDeps
+18 silly fetch manifest skills@1.5.25
+19 silly packumentCache full:https://registry.npmjs.org/skills cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/skills 226ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/skills set size:undefined disposed:false
+22 silly placeDep ROOT skills@1.5.25 OK for:  want: 1.5.25
+23 silly fetch manifest tar@^7.5.20
+24 silly packumentCache full:https://registry.npmjs.org/tar cache-miss
+25 silly fetch manifest yaml@^2.8.3
+26 silly packumentCache full:https://registry.npmjs.org/yaml cache-miss
+27 http fetch GET 200 https://registry.npmjs.org/tar 254ms (cache miss)
+28 silly packumentCache full:https://registry.npmjs.org/tar set size:undefined disposed:false
+29 silly fetch manifest yaml@^2.8.3
+30 silly packumentCache full:https://registry.npmjs.org/yaml cache-miss
+31 http fetch GET 200 https://registry.npmjs.org/yaml 721ms (cache miss)
+32 silly packumentCache full:https://registry.npmjs.org/yaml set size:undefined disposed:false
+33 silly placeDep ROOT tar@7.5.22 OK for: skills@1.5.25 want: ^7.5.20
+34 silly placeDep ROOT yaml@2.9.0 OK for: skills@1.5.25 want: ^2.8.3
+35 silly fetch manifest chownr@^3.0.0
+36 silly packumentCache full:https://registry.npmjs.org/chownr cache-miss
+37 silly fetch manifest yallist@^5.0.0
+38 silly packumentCache full:https://registry.npmjs.org/yallist cache-miss
+39 silly fetch manifest minipass@^7.1.2
+40 silly packumentCache full:https://registry.npmjs.org/minipass cache-miss
+41 silly fetch manifest minizlib@^3.1.0
+42 silly packumentCache full:https://registry.npmjs.org/minizlib cache-miss
+43 silly fetch manifest @isaacs/fs-minipass@^4.0.0
+44 silly packumentCache full:https://registry.npmjs.org/@isaacs%2ffs-minipass cache-miss
+45 http fetch GET 200 https://registry.npmjs.org/yallist 115ms (cache miss)
+46 silly packumentCache full:https://registry.npmjs.org/yallist set size:undefined disposed:false
+47 http fetch GET 200 https://registry.npmjs.org/@isaacs%2ffs-minipass 565ms (cache miss)
+48 silly packumentCache full:https://registry.npmjs.org/@isaacs%2ffs-minipass set size:undefined disposed:false
+49 http fetch GET 200 https://registry.npmjs.org/minizlib 706ms (cache miss)
+50 silly packumentCache full:https://registry.npmjs.org/minizlib set size:undefined disposed:false
+51 http fetch GET 200 https://registry.npmjs.org/chownr 1107ms (cache miss)
+52 silly packumentCache full:https://registry.npmjs.org/chownr set size:undefined disposed:false

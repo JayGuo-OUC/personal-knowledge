@@ -2,7 +2,7 @@
 title: 云原生知识库 · 操作日志
 type: synthesis
 created: 2026-08-26
-updated: 2026-08-27
+updated: 2026-09-11
 tags: [云原生, 日志]
 ---
 
@@ -178,3 +178,127 @@ AI 辅助编程场景下的提交纪律。
 - 报告含修复建议片段（改 `#{}`、补 `@Transactional(rollbackFor=Exception.class)`、keyset 游标、统一 SLF4J）。
 - 联动更新：`Agent-Skill-index.md`（加 20 篇目 + 相关 + 来源）、`wiki/index.md`（Agent-Skill 20 篇 / 总页面 77）、本日志。
 - 临时扫描脚本 `_scan.py` / `_scan.txt` 已清理。
+
+## 2026-09-10
+
+### 23-skill主流技术栈.md 第十节：接口导出与测试工程化（按工作流扩展）
+- 用户要求：在 23 篇基础上，按「后端接口全部导出方便测试 / 接口文档导出」工作流扩展找 skill，去 skills.sh 检索。
+- 新发现主表缺口：主表只有 `api-and-interface-design`（写前定契约）与 `java-junit`（单测），缺「从已有 Controller 导出 OpenAPI」与「用 Mock 把接口跑起来测」。
+- 第十节新增 3 个扩展 skill（均 installs≥1K）：
+  - `spring-boot-openapi-documentation`（giuseppe-trisciuoglio/developer-kit，3,052 / ⭐343）——Spring Boot 原生接口文档导出，正中文档导出需求；⚠️ 仓库 ⭐343 低、installs 含预装灌水，装前读 SKILL.md。
+  - `unit-test-wiremock-rest-api`（同 developer-kit 仓库，2,869 / ⭐343）——WireMock 给 REST 接口打桩做测试，与 `java-junit` 配套。
+  - `api-security-testing`（usestrix/strix，4,337 / ⭐61,562）——接口安全扫描（OWASP），质量高。
+  - 备选 `api-documentation-generator`（sickn33/agentic-awesome-skills，2,146 / ⭐46,209）框架无关通用文档导出。
+- 10.4 诚实标注未过 1K 的：功能接口测试 `api-testing`(745)、`casely`(893)、契约测试 `api-contract-testing`(888)、Pact `pactflow`(98)；参数化单测 `unit-test-parameterized`(2,845) 已由主表 `java-junit` 覆盖。
+- 结论：功能级接口自动化测试 skills.sh 无过 1K 成熟方案，先用 WireMock+JUnit 顶上。同步更新摘要/安装命令/验证状态；未改篇数编号，index 不动。
+
+### 新增 20-后端Skill试用.md（下午）
+- 用户要求把 `E:/guojian/01project/sjz/sjz-back/skill运行结果.md` 纳入 Agent-Skill 主题，「重命名为后端Skill试用」。
+- 按目录 01—20 的编号惯例定为 **`20-后端Skill试用.md`**（保留用户指定名称）；按 CLAUDE.md 规范补齐 frontmatter、摘要、相关双链与来源，原文（26 个 skill 逐项体检）完整保留。
+- 内容要点：sjz-back（Java 8 + Boot 2.3 / Hoxton）已装 26 个 skill 逐个对照 SKILL.md 做合规审计，**通过 0 · 部分通过 17 · 未通过 9**。
+  - 跨 skill 最高优先级：SQL 注入（`${id}`）、无 Flyway/Liquibase 版本化迁移、Redis `KEYS` 与大量无 TTL、字段 `@Autowired` 主导（170+ 文件）、测试与质量门禁缺失、配置明文密码、日志不规范（System.out / printStackTrace / 字符串拼接）。
+  - 与 20 篇的边界：20 篇＝重点缺陷的深度证据链 + 修复代码；21 篇＝全量 skill 适用性体检（广度）。两者互补并已互链。
+- 联动更新：`20-Skill后端试用.md`（related 加 [[20-后端Skill试用]]）、`Agent-Skill-index.md`（篇目表 + 相关区）、`wiki/index.md`（Agent-Skill 20→21 篇）、本日志。
+
+### 新增 21-前端Skill试用.md（下午）
+- 用户要求把 `E:/guojian/01project/sjz/sjz-front/skill运行结果.md` 纳入 Agent-Skill 主题，命名为 `21-前端Skill试用.md`（本次用户直接指定编号）。
+- 按 CLAUDE.md + llm-wiki（Karpathy）ingest 规范处理：补 frontmatter、提炼标签、写摘要、加 `## 相关` 双链与 `## 来源`，**原文 20 个 skill 的逐项审计结果一字未改**。
+- 内容要点：sjz-front（Vue 3.5 `<script setup>`(JS，非 TS) + Pinia 3 + Vue Router 4 + Element Plus 2.13 + Tailwind 3 + Vite 7，无 TS、无测试链）已装 20 个前端 skill 逐个审计，**PASS 6 · WARN 9 · FAIL 5**。
+  - PASS（日常主力）：`vue`、`vue-best-practices`、`vue-pinia-best-practices`、`vue-router-best-practices`、`pinia`、`element-plus`（自建）。
+  - FAIL（建议停用或移出项目上下文）：`typescript-pro`（仓库无 TS）、`vitest`（未装测试链）、`frontend-patterns` / `frontend-dev-guidelines` / `frontend-ui-engineering`（React·Next·MUI·TanStack 教条，会把 agent 导向错误 API；后者还存在 `references/accessibility-checklist.md` 断链）。
+  - 目录卫生：以 `.agents/skills/`（20 个）为准；`agent/skills/` 有 16 个重复副本、`.claude/skills/` 为子集副本，建议清理以降低维护成本。
+- 与 21 篇构成**前后端完整对照**（后端 26 个 / 前端 20 个），已互链。
+- 联动更新：`20-后端Skill试用.md`（related 加 [[21-前端Skill试用]]）、`Agent-Skill-index.md`（篇目表 + 相关区）、`wiki/index.md`（Agent-Skill 21→22 篇，总页面 78→79）、本日志。
+
+### 每日整理（2026-09-09 18:00 · 自动化触发）
+- 按 CLAUDE.md 第八节流程执行；任务调度 ID = `automation-1787715448943`。
+- `Clippings/` 不存在，无需归类清空。
+- `raw/` 今日无新增；`raw/珍大户/` 6 个原始数据文件维持 2026-09-08 14:26 mtime，无变化。
+- `mine/` 全空；`output/` 今日无新增文件。
+- **结论：今日无新资料进入 raw/mine，因此本轮不触发「raw→wiki 编译」，也不触发 output→wiki/skills 沉淀。**
+- 轻量链接检查（87 总页 / 0 孤儿 / 35 已知历史断链）：
+  - `[[CLAUDE]]` 6 处 → 根目录规则文件，是否有效取决于 Obsidian vault 范围。
+  - `[[Git概览]]` / `[[Git核心概念]]` / `[[Git主题索引]]` / `[[Git学习路线与资源]]` 各 1 处 → log.md 历史旧称，08-27 已对齐新内容，保留原状。
+  - `[[wiki/珍大户/assets/images/...]]` 25 处 → Obsidian wikilink 嵌入图片（资源存在），脚本正则误判，无须处理。
+- 与本自动化正交的今日变更（上午/下午用户驱动）：
+  - 新增 16 篇校验与 skills.sh 口径修正（详见 wiki/log.md 上方三段）
+  - 新增 20-Skill后端试用 / 20-后端Skill试用 / 21-前端Skill试用 三篇
+  - 联动更新 Agent-Skill-index / wiki/index / wiki/log.md
+- 写出本笔日志与 `output/daily-log-2026-09-09.md` 作为今日变更清单留底。
+- 未修改 `raw/` 与 `mine/` 下任何文件（合规自检通过）。
+
+## 2026-09-10
+
+### 新增 22-Skill现有技术栈.md（上午）
+- 用户需求：按公司实际栈重新梳理该装哪些 skill——后端 Java/Spring Cloud/MyBatis/MySQL/Redis/Kafka，前端 Vue3 + TS + Element Plus，并覆盖「从 UI 设计稿实现前端页面」链路。硬要求：来源 skills.sh、安装量 ≥1K、**一个技术方向不重复安装**，结果写入 `23-skill二次查找.md`。
+- 方法：skills.sh 语义检索 + GitHub API `stargazers_count`。**关键教训：skills.sh 是语义搜索，任何关键词都返回 100 条，光看名字会被误导，必须回 GitHub 读 SKILL.md 原文才能确认版本与内容**（如 `java` 关键词返回的却是大量 Boot 3 / Java 17+ skill）。
+- 产出：**17 个可安装 + 2 个自建**。
+  - 后端 8：`java-springboot`(github/awesome-copilot, 19,987/⭐38,819)、`microservices-patterns`(wshobson/agents, 11,775/⭐39,535)、`backend-patterns`(ecc, 13,165/⭐255,173)、`java-coding-standards`(ecc, 10,363)、`mysql-patterns`(ecc, 5,230)、`redis-patterns`(ecc, 5,204)、`kafka-development`(mindrally, 1,049/⭐260)、`java-junit`(awesome-copilot, 11,329)。
+  - 前端 4：`vue-best-practices`(vuejs-ai, 38,433/⭐2,836)、`typescript-expert`(sickn33, 11,966/⭐46,209)、`ui-to-vue`(ecc, 5,121)、`vue-testing-best-practices`(vuejs-ai, 11,496)。
+  - 工程通用 3：`code-review`(mattpocock, **520,310**/⭐257,863，全库安装量第一)、`api-and-interface-design`(addyosmani, 31,705/⭐93,221)、`git-commit`(awesome-copilot, 44,591)。
+  - 自建 2：**MyBatis**（`mybatis` 关键词检索 **0 条 ≥1K**，与 16 篇结论一致）、**Element Plus**（无优质公共 skill，沿用 sjz-front 已有自建模板）。
+- 主动排除的坑：`upstash-redis-js`(9,945) 是 **Node/JS 客户端**非 Java 后端所用；`create-spring-boot-java-project`(9,509) 是 **Java 21 + Boot 3 脚手架**会毁存量项目；`typescript-advanced-types`(72,710) installs 最高但只讲**类型体操**，日常业务用不上；`planetscale/mysql`(7,632) 仓库仅 ⭐661 且偏自家产品。
+- 文档附：按仓库合并的安装命令（快模式 `--agent cursor`，避免全平台版单 skill 约 7 分钟）、**JDK 8 / Boot 2.3 版本护栏写法**。
+- 联动更新：`21-前端Skill试用.md`（补齐缺失的 frontmatter `related` 字段并回链 23）、`Agent-Skill-index.md`（篇目表 + 相关区）、`wiki/index.md`（Agent-Skill 22→23 篇，总页面 79→80）、本日志。
+
+### 新增 23-skill主流技术栈.md（上午，23 篇的姐妹篇）
+- 用户追加要求：**别考虑存量项目，版本不是问题**，按主流技术栈重做一份选型（去重与 ≥1K 门槛同 23 篇），写入 `23-skill主流技术栈.md`。
+- 与 23 篇的差异：① 去掉版本约束与「版本护栏」章节；② Element Plus 方向给出可装方案 `element-plus-vue3`(1,941/⭐658)，而非仅自建；③ 新增「与 23 篇的差异」对照表与「验证状态说明」章节（诚实标注哪些已读 SKILL.md 原文、哪些仅依据 installs/star 判断）。
+- 本轮补搜的新结论：
+  - **MyBatis 仍为 0 条 ≥1K**——用 `mybatis` / `mybatis plus` / `persistence layer` 多轮检索均为 0；注意 `mybatis plus` 返回的是 `element-plus-vue3`、`web-search-plus` 这类**名字误匹配**（"plus" 被语义匹配），切勿采信。
+  - ORM 方向唯一过线的是 `affaan-m/ecc/jpa-patterns`(9,190/⭐255,173)，但属 **JPA/Hibernate**，与 MyBatis 不是一回事，不推荐。
+  - Element Plus：`partme-ai/full-stack-skills/element-plus-vue3`(1,941) 过线；UI 还原主推 `affaan-m/ecc/ui-to-vue`(5,126)，`figma/mcp-server-guide/implement-design`(6,003，installs 更高但未取到原文) 列为 Figma 场景备选。
+  - Kafka 仍只有 `mindrally/skills/kafka-development`(1,049)；若做事件溯源可看 `wshobson/agents/event-store-design`(9,594/⭐39,535)。
+- 最终产出：**16 个可安装 + 1 个自建（MyBatis）**。
+- 联动更新：`22-Skill现有技术栈.md`（related 加 24，双向互链）、`Agent-Skill-index.md`（篇目表 + 相关区）、`wiki/index.md`（Agent-Skill 23→24 篇，总页面 80→81）、本日志。
+
+### 重写 17-文档Skill.md 与 18-通用Skill.md（上午）
+- 用户需求：围绕**编写需求规格说明书、概要设计说明书、详细设计说明书、用户使用说明手册**重做 17 篇，并一并更新 18 篇；来源 skills.sh、installs≥1K、每方向不重复；**17 篇之前内容删除重写**（18 篇同样按新检索重写）。
+- **17 篇产出（7 主装 + 3 配套）**：`create-specification`(13,397/⭐38,819，需求规格)、`architecture-blueprint-generator`(11,964/⭐38,819，概要设计)、`create-oo-component-documentation`(7,022/⭐38,819，详细设计)、`documentation-writer`(26,239/⭐38,819，用户手册)、`architecture-decision-records`(wshobson, 16,372/⭐39,535)、`mermaid-diagrams`(softaworks, 4,863/⭐2,452)、`create-readme`(18,165/⭐38,819)；配套 `update-specification`(9,236)、`create-github-issues-for-unmet-specification-requirements`(8,975)、`update-oo-component-documentation`(6,991)。
+- **18 篇产出（7 个通用）**：`improve-codebase-architecture`(mattpocock, 901,011/⭐257,863)、`code-review`(mattpocock, 520,310)、`systematic-debugging`(obra, 253,410/⭐284,019)、`git-commit`(44,591/⭐38,819)、`architecture-patterns`(wshobson, 21,882/⭐39,535)、`refactor`(21,635/⭐38,819)、`security-review`(ecc, 16,130/⭐255,183)。
+- **本轮关键发现：installs 高 ≠ 可信**。
+  - `warpdotdev/common-skills/write-tech-spec` installs 24,793 但仓库仅 ⭐**564**——Warp 终端**厂商预装推送**带来的安装量。
+  - `riekelt/technical-writer/writing-design-docs` installs 5,860 但仓库仅 ⭐**16**——名字最贴「设计文档写作」却几乎无人验证。
+  - `microsoft/azure-skills/azure-compliance` installs 569,861 但**绑定 Azure 平台**，非通用合规能力。
+  - 三者均未选入主表。**结论：installs 只说明装得多，star 才是社区验证信号。**
+- **方法备忘**：GitHub API 未认证配额（60/hr）两轮即耗尽并返回 403；**改用 curl 抓仓库页面 HTML 提取 star 可绕开限流**：`curl -s https://github.com/<repo> | grep -oE 'id="repo-stars-counter-star"[^>]*title="[0-9,]+"'`。
+- 合规方向结论：检索到的合规 skill 全部绑定特定法规或平台（Azure / PCI-DSS / HIPAA / 无障碍），**无适配国内政企「代码与数据不出境」的通用项**，建议沿用 16 篇已自建的 `data-compliance-guard`（含 `scripts/scan-egress.py`，支持 .cn 与内网域名白名单不误报）。
+- 联动更新：`Agent-Skill-index.md`（17/18 篇目表与相关区描述）、本日志。
+
+### 删除 20-Skill后端试用.md 并重编号后续文档（上午）
+- 用户要求：删除 20 号文档，后续文档编号前移，并更新相关链接。
+- 执行：旧 `20-Skill后端试用.md` **移出 wiki 备份至 `_tmp/deleted_wiki/`**（未彻底删除，可恢复）；随后 `21→20`、`22→21`、`23→22`、`24→23` 重命名。
+- 编号映射：旧 21 后端体检 → **20-后端Skill试用**；旧 22 前端体检 → **21-前端Skill试用**；旧 23 二次查找 → **22-Skill现有技术栈**；旧 24 主流技术栈 → **23-skill主流技术栈**。Agent-Skill 现有 **01—23**。
+- 全库同步：sed 批量替换 4 组编号字符串（覆盖 frontmatter title、H1 标题、正文 `[[双链]]`、"X 篇"简写），范围含 `wiki/index.md`、`wiki/log.md`、`wiki/Agent-Skill/*.md`。
+- 断链清理：删除所有指向已删文档的 `[[20-Skill后端试用]]` 链接行；改写 `20-后端Skill试用` 与 `21-前端Skill试用` 摘要中「与已删文档互补」的表述；`wiki/index.md` 中对应来源条目一并删除。
+- 统计更新：`wiki/index.md` Agent-Skill 24→**23 篇**，总页面 81→**80**。
+- 说明：`wiki/log.md` 中提及旧 20 的均为**纯文本历史记录**（非 `[[]]` 链接），按 append-only 原则保留，不产生断链。
+
+### 23-skill主流技术栈.md 第九节补全「版本排除项解禁清单」（延续未完成任务）
+- 背景：上一轮已在 23 篇（不受版本约束的姐妹篇）写入「九、曾被版本约束排除、现已解禁的 skill」一节，但核对 22 篇时发现两处遗漏 + 一处来源口径需澄清。
+- 本轮用 skills.sh 公开接口（`https://www.skills.sh/api/search`）补全检索，确认并新增：
+  - **`microservices-architect`**（`jeffallan/claude-skills`，**4,259**/⭐11,389）：与 23 主表 `microservices-patterns` 同方向、面向 Java 21/Boot 3，补入 9.1 替换选项。
+  - **`mindrally/java`**（写 Java 17+）：来源为 22 篇实测记录；skills.sh 当前未收录其独立安装量（同名仅 `mindrally/skills/spring-boot` 769），标注「未核实」，补入 9.1 替换选项。
+  - 来源澄清：`java-architect` 主流来源是 `jeffallan/claude-skills`(5,219)；22 篇写的 `piomin/claude-ai-spring-boot/java-architect` 在 skills.sh 仅 1 安装，以 jeffallan 版为准。
+  - 同系列 `java-microservices`(`pluginagentmarketplace/custom-plugin-java`) 仅 484 安装，未过 1K 门槛，注明不列入主清单。
+- 现 23 篇第九节共覆盖 **5 个解禁替换项 + 2 个场景限定项 + 1 组「仍排除（与版本无关）」**，与 22 篇构成完整的版本约束/解禁对照。
+- 本次仅增补内容，未改动篇数/编号/标题/链接，`Agent-Skill-index.md` 与 `wiki/index.md` 无需变动。
+
+## 2026-09-11
+
+### 每日整理（2026-09-11 08:07 · 自动化触发）
+- 按 CLAUDE.md 第八节流程执行；任务调度 ID = `automation-1787715448943`。
+- `Clippings/` 不存在，无需归类清空。
+- `raw/` 今日无新增；`raw/珍大户/` 6 个文件维持 2026-09-08 14:26 mtime。`mine/` 全空。
+- `output/` 今日无新增文件。
+- **结论：今日无新资料进入 raw/mine/output，不触发 raw→wiki 编译，也不触发 output→wiki/skills 沉淀。**
+- **index.md 统计校正**：发现 `wiki/index.md` 统计数据与实际文件数偏差 +4：
+  - 珍大户：index 写 16，实际 18（15 主题页 + index + 系列脉络 + 重点必读）。
+  - Agent-Skill：index 写 23 篇（24 文件），实际 25 篇（26 文件，含 09-10 新增的 24-软件开发Skill 与 25-开发Skill最佳实践）。
+  - 总页面：80 → 84。
+- 轻量链接检查（84 活跃页面 / 0 孤儿 / 12 已知断链）：
+  - `[[CLAUDE]]` 6 处 → 根目录规则文件，是否有效取决于 Obsidian vault 范围。
+  - `log.md` 内 5 处历史旧称（Git概览/Git核心概念/Git主题索引/Git学习路线与资源/双链）→ append-only 历史记录，保留原状。
+  - `log.md` 内 `[[20-Skill后端试用]]` 1 处 → 已删文档历史引用，文本提及非结构化链接，保留。
+- 产出 `output/daily-log-2026-09-11.md`。
+- 未修改 `raw/` 与 `mine/` 下任何文件（合规自检通过）。

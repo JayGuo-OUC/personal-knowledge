@@ -3,8 +3,16 @@ title: Agent Skills 开放标准与生态全景
 type: entry
 created: 2026-09-03
 updated: 2026-09-03
-tags: [AI, Agent, Skill, 标准, 生态]
-sources: [agentskills.io/specification, github.com/anthropics/skills, github.com/agentskills/agentskills]
+tags:
+  - AI
+  - Agent
+  - Skill
+  - 标准
+  - 生态
+sources:
+  - agentskills.io/specification
+  - github.com/anthropics/skills
+  - github.com/agentskills/agentskills
 ---
 
 # Agent Skills 开放标准与生态全景

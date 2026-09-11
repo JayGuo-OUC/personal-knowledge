@@ -1,0 +1,31 @@
+0 verbose cli C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\node.exe C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.7
+2 info using node@v22.22.2
+3 silly config load:file:C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\node_modules\npm\npmrc
+4 silly config load:file:E:\guojian\01project\sjz\sjz-front\.npmrc
+5 silly config load:file:C:\Users\lenovo\.npmrc
+6 silly config load:file:C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\etc\npmrc
+7 verbose title npm exec skills add vuejs-ai/skills --skill vue-best-practices --skill vue-router-best-practices --skill vue-pinia-best-practices --skill vue-testing-best-practices -y --agent cursor
+8 verbose argv "exec" "--yes" "--" "skills" "add" "vuejs-ai/skills" "--skill" "vue-best-practices" "--skill" "vue-router-best-practices" "--skill" "vue-pinia-best-practices" "--skill" "vue-testing-best-practices" "-y" "--agent" "cursor"
+9 verbose logfile logs-max:10 dir:E:\guojian\993学习资料\_tmp\npmcache\_logs\2026-09-09T07_55_17_807Z-
+10 verbose logfile E:\guojian\993学习资料\_tmp\npmcache\_logs\2026-09-09T07_55_17_807Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile error removing log file E:\guojian\993学习资料\_tmp\npmcache\_logs\2026-09-09T07_18_47_802Z-debug-0.log Error: [safe-delete] 操作失败: ERROR E:\guojian\993学习资料\_tmp\npmcache\_logs\2026-09-09T07_18_47_802Z-debug-0.log: Error during a `trash` operation: Unknown { description: "Some operations were aborted" }
+12 silly logfile     at trashViaBinary (D:\apps\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:270:15)
+12 silly logfile     at trashItem (D:\apps\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:283:9)
+12 silly logfile     at tryTrash (D:\apps\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:547:5)
+12 silly logfile     at tryRm (D:\apps\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:722:5)
+12 silly logfile     at Object.wrappedPromisesRm [as rm] (D:\apps\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:766:15)
+12 silly logfile     at #cleanLogs (C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2\node_modules\npm\lib\utils\log-file.js:245:20)
+13 silly logfile done cleaning log files
+14 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+15 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+16 http fetch GET 200 https://registry.npmjs.org/skills 521ms (cache revalidated)
+17 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+18 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+19 verbose cwd E:\guojian\01project\sjz\sjz-front
+20 verbose os Windows_NT 10.0.26100
+21 verbose node v22.22.2
+22 verbose npm  v10.9.7
+23 verbose exit 0
+24 info ok

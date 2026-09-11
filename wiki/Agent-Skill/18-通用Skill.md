@@ -1,154 +1,101 @@
 ---
-title: 通用优质 Skill 总览（技术负责人 / 架构师工作相关）
+title: "18-通用Skill：架构 / 质量 / 调试 / 重构 / 提交规范"
 type: entry
-created: 2026-09-08
-updated: 2026-09-08
-tags: [AI, Agent, Skill, Cursor, 通用, 架构, 代码质量, 提交规范, 版本管理, 合规, 推荐]
-sources: [skills.sh, github.com/vercel-labs/skills, github.com/wshobson/agents, github.com/vercel/ai, github.com/jabrena/cursor-rules-java, github.com/sammcj/agentic-coding, github.com/mattpocock/skills, github.com/tigrisdata/skills, github.com/eva813/skills-base, github.com/laurigates/claude-plugins]
+created: 2026-09-10
+updated: 2026-09-10
+tags: [AI, Agent, Skill, 通用, 架构, 代码质量, 调试, 重构, 提交规范, 安全评审, skills.sh]
+sources: [https://www.skills.sh/, GitHub stargazers_count, 17-文档Skill]
+
 ---
 
-# 通用优质 Skill 总览（技术负责人 / 架构师工作相关）
+# 18-通用Skill：架构 / 质量 / 调试 / 重构 / 提交规范
 
 ## 摘要
+**不绑定具体语言栈**的通用工程能力清单：架构改进、代码评审、系统化调试、重构、架构模式、提交规范、安全评审。全部取自 **skills.sh**，门槛 **安装量 ≥1K**，**一个方向只保留一个**。共 **7 个主装 skill**。
 
-作为**技术负责人 / 架构师**（公司做政府、工业、水务等强合规业务，前端 Vue3 + TS + Element Plus，后端 Spring Cloud + Java + MyBatis），日常最值得装的优秀 Skill 不止写代码。本文按**工作场景**分 6 类，每类标注**触发关键词 / 调用方式**，安装命令统一用 **skills.sh 的 `npx skills add` 体系**。文档类、技术栈类分别在 [[17-文档Skill]]、[[16-程序员推荐安装的Skill]] 详述，本文是"通用且必装"的总览与入口。核心决策：**团队规范 / 合规 / 架构决策 / 文档模板 → 项目级进 git；个人效率工具 → 全局**。
+> 分工：本篇 = **通用工程能力**（任何语言都用得上）；[[17-文档Skill]] = 文档编写；[[23-skill主流技术栈]] = 按 Java / Vue3 具体语言栈的选型。三篇互不重叠，可同时装配。
 
-## 正文
+---
 
-### 第一步：先装「元技能」find-skills
+## 一、选型原则
 
-- `find-skills`（vercel-labs/skills，**1.4M+ 安装**，⭐30.6k，全生态第一）：用自然语言搜并安装其它 Skill 的元技能
+1. **来源唯一**：skills.sh 检索，`installs ≥ 1000`；star 取自 GitHub `stargazers_count`。
+2. **一个方向一个**：架构改进 / 代码评审 / 调试 / 重构 / 架构模式 / 提交规范 / 安全评审 各留一个。
+3. **警惕 installs 灌水**：本轮再次验证——`microsoft/azure-skills/azure-compliance` installs 高达 569,861，但它是 **Azure 平台绑定**的合规 skill，非通用能力，**未选入主表**。同理 [[17-文档Skill]] 中 `warpdotdev/write-tech-spec`(24,793 installs / 仅 ⭐564) 也是厂商预装灌水。**installs 高只说明装得多，不说明适合你**。
 
-> ⭐ 说明：表格中 ⭐ 数值为该技能**宿主 GitHub 仓库**的 Star 数（一个仓库常含多个 Skill，故为仓库级指标，并非单技能独立计数）。`smithery/ai` 与 `dengineproblem/agents-monorepo` 当前 GitHub 返回 404（仓库已不可访问），标 N/A。
-- 想装什么直接说即可，不必每次手动查市场
-- 安装（全局）：`npx skills add vercel-labs/skills --skill find-skills -g`
-- 它是后续所有安装的入口，建议**全局**安装（个人通用）
+---
 
-### 一、架构与设计决策（架构师核心）
+## 二、完整清单（7 个主装）
 
-| 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
-|-----------|----------------------|------------------------|----------|
-| `architecture-decision-records`（wshobson/agents · ⭐39.5k，15.3k 安装） | "记架构决策"、"出 ADR"、"技术选型留痕"、"MADR 模板"、"设计评审" | `npx skills add wshobson/agents --skill architecture-decision-records` | **项目级 + 进 git** |
-| `adr-skill`（vercel/ai · ⭐26.6k） | "把决策写成可执行 ADR"、"技术决策含实施方案"、"为什么这么选" | `npx skills add vercel/ai --skill adr-skill` | **项目级 + 进 git** |
-| `034-architecture-diagrams`（jabrena/cursor-rules-java → jabrena/plinth · ⭐437） | "画 C4 模型"、"UML 类/序列/状态机图"、"ER 图" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
+| # | 方向 | skill | 来源仓库 | 安装量 | Star | 用法（触发场景 / 帮你做什么） |
+|---:|---|---|---|---:|---:|---|
+| 1 | **代码库架构改进** | `improve-codebase-architecture` | `mattpocock/skills` | **901,011** | ⭐257,863 | 「这个模块的架构该怎么理顺」→ 分析现有代码结构，给出分层、依赖、边界的重构方向。**全库安装量最高的 skill**。 |
+| 2 | **代码评审** | `code-review` | `mattpocock/skills` | **520,310** | ⭐257,863 | 提交前跑一遍 → 自动找出 bug、安全隐患、性能问题并分级输出。**日常最高性价比的一个**，建议每次 PR 前用。 |
+| 3 | **系统化调试** | `systematic-debugging` | `obra/superpowers` | **253,410** | ⭐284,019 | 遇到疑难 bug 时 → 强制走「复现→定位假设→最小化验证→根因→修复」流程，避免瞎猜乱改。**比"帮我看看哪里错了"有效得多**。 |
+| 4 | **提交规范** | `git-commit` | `github/awesome-copilot` | **44,591** | ⭐38,819 | 生成 Conventional Commits 规范的提交信息与 PR 描述。同类 `conventional-commit`(16,187) 属同方向，不重复装。 |
+| 5 | **架构模式参考** | `architecture-patterns` | `wshobson/agents` | **21,882** | ⭐39,535 | 选型/设计时给出成熟架构模式参考（分层、事件驱动、CQRS、六边形等），用于方案评审与对比。 |
+| 6 | **重构** | `refactor` | `github/awesome-copilot` | **21,635** | ⭐38,819 | 「把这个方法/类重构一下」→ 安全地做提取方法、消除重复、简化条件等，并保持行为不变。 |
+| 7 | **安全评审** | `security-review` | `affaan-m/ecc` | **16,130** | ⭐255,183 | 上线前安全自查 → 注入、越权、敏感信息泄露、依赖 CVE 等。强合规场景（政府/工业/水务）建议设为**发布门禁**。 |
 
-> 技术负责人的核心产出之一是**技术决策留痕**与**架构图**。ADR 类技能把"为什么选 Spring Cloud / 为什么用 MyBatis 而非 JPA"固化成可审计记录；`034-architecture-diagrams` 用 C4 + PlantUML 一键出图，写进概要/详细设计（联动 [[17-文档Skill]]）。
+---
 
-### 二、代码质量与评审
+## 三、⚠️ 合规方向：没有适配国内政企的通用 skill
 
-| 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
-|-----------|----------------------|------------------------|----------|
-| `code-review`（sammcj/agentic-coding · ⭐160） | "做代码评审"、"review my changes"、"严格自审" | `npx skills add sammcj/agentic-coding --skill code-review` | 全局（个人）/ 项目级（团队强制门禁） |
-| `tdd`（mattpocock/skills · ⭐256k） | "用 TDD 写"、"先写测试再实现"、"red-green-refactor" | `npx skills add mattpocock/skills --skill tdd` | 全局 |
-| `grill-me`（mattpocock/skills · ⭐256k） | "审查 TS 类型安全"、"抓 any 滥用"、"类型审查" | `npx skills add mattpocock/skills --skill grill-me` | 全局 |
+检索到的合规类 skill 全部**绑定特定法规或平台**，与贵司「政府 / 工业 / 水务 + 代码数据不出境」的场景不匹配：
 
-> 代码质量是团队红线。详见 [[16-程序员推荐安装的Skill]] 的测试/评审小节与贵司 `ai-code-review` 门禁。
+| skill | 安装量 | 为什么不适合 |
+|---|---:|---|
+| `microsoft/azure-skills/azure-compliance` | 569,861 | 绑定 Azure 云平台 |
+| `wshobson/agents/pci-compliance` | 9,320 | 支付卡行业 PCI-DSS |
+| `wshobson/agents/accessibility-compliance` | 12,985 | 无障碍访问（前端） |
+| `affaan-m/ecc/healthcare-phi-compliance` | 7,426 | 美国医疗 HIPAA |
 
-### 三、提交规范与版本管理
+**建议自建**：贵司真正需要的是「**代码与数据不出境**」的检查（境外 API 调用、敏感数据外传），这在 skills.sh 上没有通用项。自建要点可参考 [[16-程序员推荐安装的Skill]] 中已沉淀的 `data-compliance-guard`（含 `scripts/scan-egress.py` 扫描脚本，支持 `.cn`/内网域名白名单不误报），已安装在 `~/.cursor/skills/`。
 
-| 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
-|-----------|----------------------|------------------------|----------|
-| `conventional-commits`（tigrisdata/skills · ⭐3） | "按约定式提交"、"生成 CHANGELOG"、"语义化版本" | `npx skills add tigrisdata/skills --skill conventional-commits` | 全局 |
-| `git-conventional-commits`（eva813/skills-base · ⭐2） | "规范 git 提交"、"feat/fix/docs 分类"、"提交信息校验" | `npx skills add eva813/skills-base --skill git-conventional-commits` | 全局 |
-| `git-commit-workflow`（laurigates/claude-plugins · ⭐58） | "提交前上下文收集"、"显式暂存"、"关联 issue" | `npx skills add laurigates/claude-plugins --skill git-commit-workflow` | 全局 |
+---
 
-> 统一的提交规范 = 自动 CHANGELOG + 语义化发版 + 可审计变更。个人效率类，建议**全局**。
+## 四、安装命令
 
-### 四、需求与文档（详见 [[17-文档Skill]]）
+`--agent cursor` 为快模式（只给 Cursor 建软链，秒级完成）；全平台版换成 `--agent '*'`（单 skill 约 7 分钟）。
 
-| 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
-|-----------|----------------------|------------------------|----------|
-| `work-define`（juanca202/sdd-devkit · ⭐0） | "写需求规格说明书"、"拆解用户故事"、"补验收标准" | `npx skills add juanca202/sdd-devkit --skill work-define` | **项目级 + 进 git** |
-| `design-define`（juanca202/sdd-devkit · ⭐0） | "写详细设计"、"数据模型/API/流程图规范" | `npx skills add juanca202/sdd-devkit --skill design-define` | **项目级 + 进 git** |
-| `openapi-documentation`（dengineproblem/agents-monorepo · ⭐N/A，GitHub 404） | "写接口契约"、"OpenAPI 3.0 规范" | `npx skills add dengineproblem/agents-monorepo --skill openapi-documentation` | **项目级 + 进 git** |
+```bash
+# 架构改进 + 代码评审（同一仓库，一次装完）
+npx -y skills add mattpocock/skills --skill improve-codebase-architecture --skill code-review -y --agent cursor
 
-> 三类工程文档（需求/概要/详细）的完整 Skill 清单见 [[17-文档Skill]]，此处仅列代表项。
+# 系统化调试
+npx -y skills add obra/superpowers --skill systematic-debugging -y --agent cursor
 
-### 五、安全合规（详见 [[12-Skill安全与企业合规]] + 贵司治理系列）
+# 提交规范 + 重构
+npx -y skills add github/awesome-copilot --skill git-commit --skill refactor -y --agent cursor
 
-| 推荐 Skill | 触发关键词 / 调用方式 | 安装 | 建议层级 |
-|-----------|----------------------|------|----------|
-| `ai-coding-policy` / `ai-code-review` / `ai-coding-audit` / `cursor-setup` / `code-agent-best-practices`（贵司） | 见各技能 description，如"AI 编程能做什么/不能做什么"、"提交前评审"、"合规审计" | 从贵司私有仓库 / 白名单安装，如 `npx skills add <贵司git>/ai-coding-skills --skill ai-code-review` | **项目级 + 进 git（强制）** |
+# 架构模式 + 安全评审
+npx -y skills add wshobson/agents --skill architecture-patterns -y --agent cursor
+npx -y skills add affaan-m/ecc --skill security-review -y --agent cursor
+```
 
-> 政府/工业/水务强合规，代码不出境是红线。详见 [[12-Skill安全与企业合规]] 与 [[16-程序员推荐安装的Skill]] 的落地建议。
+> 如遇 GitHub SSL 握手失败：`git config --global url."https://ghproxy.net/https://github.com/".insteadOf "https://github.com/"`，**装完记得 `--unset`**。
 
-### 六、技术栈专项（详见 [[16-程序员推荐安装的Skill]]）
+---
 
-- **前端**：`vue-composition-api`、`vue-performance`（PatternsDev/skills · ⭐246）、`frontend-design`（anthropics/skills · ⭐175k）、`grill-me`（mattpocock/skills · ⭐256k，TS）、`element-plus`（自建进 git）
-- **后端**：`java`（mindrally/skills · ⭐258）、`spring-boot-engineer` / `java-architect` / `java-code-review` / `api-contract-review`（piomin/claude-ai-spring-boot · ⭐1.3k）、`spring-boot-development`（smithery/ai · ⭐N/A，仓库 GitHub 404）、`mysql-best-practices` / `sql-optimization-patterns`、`mybatis`（自建进 git）
-- 完整触发词与安装命令见 [[16-程序员推荐安装的Skill]]。
+## 五、与 17 / 23 篇的装配关系
 
-### 安装命令（skills.sh 统一体系）
+| 篇目 | 管什么 | 何时用 |
+|---|---|---|
+| [[18-通用Skill]]（本篇） | 架构改进、评审、调试、重构、提交、安全 | **任何项目都装**，与语言无关 |
+| [[17-文档Skill]] | 需求规格 / 概要设计 / 详细设计 / 用户手册 | 要出交付文档时 |
+| [[23-skill主流技术栈]] | Java / Spring Cloud / MyBatis / MySQL / Redis / Kafka + Vue3 / TS / Element Plus | 按具体项目语言栈配 |
 
-| 目的 | 命令 |
-|------|------|
-| 预览仓库内有哪些技能（先看清再装） | `npx skills add owner/repo --list` |
-| 装单个技能（**项目级，默认**） | `npx skills add owner/repo --skill skill-name` |
-| 装到**全局**（跨项目可用） | `npx skills add owner/repo --skill skill-name -g` |
-| 指定装到某个 Agent | `npx skills add owner/repo --skill skill-name -a cursor`（或 `-a claude-code`） |
-| 装整个仓库全部技能 | `npx skills add owner/repo --all` |
-| 按关键词搜社区技能 | `npx skills find <关键词>` |
-| 查看已装（全局加 `-g`） | `npx skills list` / `npx skills list -g` |
-| 更新（单个 / 全部） | `npx skills update <name>` / `npx skills update` |
-| 删除 | `npx skills remove <name>` |
-| 把流程固化成技能 | `npx skills init my-skill` |
+三篇可叠加，无重复（本篇的 `code-review` 与 23 篇的 `code-review` 是同一个，装一次即可）。
 
-> 项目级默认落到 `.cursor/skills/`（或 `.agents/skills/`），全局落到 `~/.cursor/skills/`（或 `~/.agents/skills/`）。Cursor 会递归扫描并自动加载。
-
-### 全局 vs 项目级：决策框架
-
-| 维度 | 用户级（全局 `-g` → `~/.cursor/skills/`） | 项目级（默认 → `.cursor/skills/` 进 git） |
-|------|------------------------------------------|------------------------------------------|
-| 作用范围 | 你本地**所有项目**通用 | **仅本项目**，队友 clone 即得 |
-| 适合内容 | 个人效率工具、私人偏好 | 团队规范、架构决策、文档模板、合规要求 |
-| 同步到 Cloud / SSH worker | ❌ **不会同步**（Cursor 限制） | ✅ 仓库里就有 |
-| 版本 / 审计 | 个人维护，难统一 | 进 git，可评审、可回滚、可审计 |
-| 典型例子 | `find-skills`、`grill-me`、`tdd`、`conventional-commits`、个人提交偏好 | `architecture-decision-records`、`adr-skill`、`034-architecture-diagrams`、`work-define`、`code-review`（团队门禁）、贵司 `ai-coding-*` |
-
-> **两种口径的叠加**（skills.sh 官方 + 贵司合规）：
-> - skills.sh 官方：通用型（code review、tdd）→ **全局**；领域型（框架）→ **项目级**
-> - 贵司强合规：**凡团队标准 / 治理 / 架构决策 / 文档模板 → 一律项目级 + 进 git**
-> - 一句话：**个人习惯放全局，团队规矩进项目。**
-
-> ⚠️ **关键限制（来自 [[09-Cursor中的Skill全景]]）**：Cursor **不会**把 `~/.cursor/skills/` 同步到 Cloud Agents、远程 SSH、self-hosted worker。团队规范必须放项目级并进 git。
-
-### 落地建议（结合贵司强合规背景）
-
-1. **治理 / 合规 / 架构决策 / 文档模板类 → 一律项目级 + 进 git**
-   - 包括：贵司 `ai-coding-*` 系列、`architecture-decision-records`、`adr-skill`、`034-architecture-diagrams`、`work-define`、`design-define`、`openapi-documentation`
-   - 理由：可审计、可评审、可同步到 worker、队友 clone 即得
-2. **个人效率工具 → 全局（`-g`）**
-   - `find-skills`、`grill-me`、`tdd`、`conventional-commits`、`git-conventional-commits`、`git-commit-workflow`
-3. **安装前先预览**：`npx skills add owner/repo --list`，确认内容再 `--skill` 安装
-4. **技术栈专项**走 [[16-程序员推荐安装的Skill]]，**文档专项**走 [[17-文档Skill]]，本文作总入口
-
-### 风险提示
-
-- 从 [[12-Skill安全与企业合规]] 与 [[15-Skill市场与下载渠道]] 已知：**市场 ≠ 可信**（Snyk 审计 3984 个技能，13.4% 含严重问题；学术界扫 42447 个，26.1% 含漏洞）
-- 项目级技能**进 git 前必须做代码评审**；带 `scripts/` 的技能出事概率是纯指令型的 **2.12 倍**
-- 企业：只从白名单市场下载，建立技能审批流程后再进项目级目录
+---
 
 ## 相关
-
-- [[09-Cursor中的Skill全景]]
-- [[10-Cursor安装与使用教程]]
-- [[11-实战技能包六件套]]
-- [[12-Skill安全与企业合规]]
-- [[15-Skill市场与下载渠道]]
-- [[16-程序员推荐安装的Skill]]
-- [[17-文档Skill]]
-- [[02-Agent-Skills开放标准与生态全景]]
+- [[17-文档Skill]]（文档编写类 skill，与本篇互补）
+- [[16-程序员推荐安装的Skill]]（更早的通用推荐，含自建六件套）
+- [[23-skill主流技术栈]]（按语言栈的选型）
+- [[12-Skill安全与企业合规]]（Skill 供应链安全与治理框架）
 
 ## 来源
-
-- https://skills.sh （排行榜、安装量、CLI 文档）
-- https://github.com/vercel-labs/skills （find-skills 元技能）
-- https://github.com/wshobson/agents （architecture-decision-records：ADR 模板，15.3k 安装）
-- https://github.com/vercel/ai （adr-skill：可执行 ADR 规范）
-- https://github.com/jabrena/cursor-rules-java （034-architecture-diagrams：UML + C4 + ER）
-- https://github.com/sammcj/agentic-coding （code-review）
-- https://github.com/mattpocock/skills （tdd、grill-me）
-- https://github.com/tigrisdata/skills （conventional-commits）
-- https://github.com/eva813/skills-base （git-conventional-commits）
-- https://github.com/laurigates/claude-plugins （git-commit-workflow）
-- 文档类见 [[17-文档Skill]] 来源；技术栈类见 [[16-程序员推荐安装的Skill]] 来源
+- skills.sh 公开检索接口：`https://www.skills.sh/api/search?q=...`（installs，检索于 2026-09-10）
+- GitHub `stargazers_count`（star，检索于 2026-09-10）
+- 检索关键词：`architecture` / `code quality` / `commit convention` / `compliance` / `security review` / `testing strategy` / `refactoring` / `debugging` 等 8 组

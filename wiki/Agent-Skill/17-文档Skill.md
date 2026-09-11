@@ -1,127 +1,121 @@
 ---
-title: 写文档必备的 Skill（需求规格说明书 / 概要设计 / 详细设计）
+title: "17-文档Skill：需求规格 / 概要设计 / 详细设计 / 用户手册"
 type: entry
-created: 2026-09-08
-updated: 2026-09-08
-tags: [AI, Agent, Skill, Cursor, 文档, 需求规格说明书, 概要设计, 详细设计, UML, C4, ADR, OpenAPI, 技术写作]
-sources: [skills.sh, github.com/juanca202/sdd-devkit, github.com/jabrena/cursor-rules-java, github.com/markdown-viewer/skills, github.com/wshobson/agents, github.com/vercel/ai, github.com/jabrena/plinth, github.com/dengineproblem/agents-monorepo, github.com/aiskillstore/marketplace]
+created: 2026-09-10
+updated: 2026-09-10
+tags: [AI, Agent, Skill, 文档, 需求规格说明书, 概要设计, 详细设计, 用户手册, 技术写作, ADR, Mermaid, skills.sh]
+sources: [https://www.skills.sh/, GitHub stargazers_count, 18-通用Skill]
+
 ---
 
-# 写文档必备的 Skill（需求规格说明书 / 概要设计 / 详细设计）
+# 17-文档Skill：需求规格 / 概要设计 / 详细设计 / 用户手册
 
 ## 摘要
+围绕「**编写需求规格说明书、概要设计说明书、详细设计说明书、用户使用说明手册**」这四类文档重新梳理的 skill 清单。全部取自 **skills.sh**，门槛 **安装量 ≥1K**，**一个文档方向只保留一个**。共 **7 个主装 skill**，覆盖四大文档 + ADR + 文档配图 + 项目 README。
 
-你们日常要产出**需求规格说明书、概要设计、详细设计**三类工程文档。本文按**文档类型**拆分，列出每种文档该装哪些 Skill，每个都标注**触发关键词 / 调用方式**，安装命令统一用 **skills.sh 的 `npx skills add` 体系**。所有文档类技能产出的是 Markdown / PlantUML，建议**项目级 + 进 git**（团队模板统一、可追溯、可同步到 worker）。元技能 `find-skills` 仍作入口。技术栈专项（Vue/Spring/Java/MyBatis）见 [[16-程序员推荐安装的Skill]]；通用优质技能总览见 [[18-通用Skill]]。
+> 本篇只管**文档编写**；架构/质量/调试/提交规范等通用工程能力见 [[18-通用Skill]]；按语言栈（Java/Vue3）的选型见 [[23-skill主流技术栈]]。
 
-## 正文
+---
 
-### 第一步：先装「元技能」find-skills
+## 一、选型原则（本轮三条，含一个反直觉发现）
 
-- `find-skills`（vercel-labs/skills，**1.4M+ 安装**，⭐30.6k，全生态第一）：用自然语言搜并安装其它 Skill 的元技能
+1. **来源唯一**：skills.sh 检索，取 `installs ≥ 1000`；star 取自 GitHub `stargazers_count`（仓库级）。
+2. **一个文档方向一个**：需求规格 / 概要设计 / 详细设计 / 用户手册 / ADR / 配图 / README 各留一个，不叠装。
+3. **⚠️ installs 高 ≠ 可信——本轮最重要的发现**：
 
-> ⭐ 说明：表格中 ⭐ 数值为该技能**宿主 GitHub 仓库**的 Star 数（一个仓库常含多个 Skill，故为仓库级指标，并非单技能独立计数）。`smithery/ai` 与 `dengineproblem/agents-monorepo` 当前 GitHub 返回 404（仓库已不可访问），标 N/A。
-- 想装什么直接说（"找个写需求规格说明书的技能"）即可，不必每次手动查市场
-- 安装（全局）：`npx skills add vercel-labs/skills --skill find-skills -g`
-- 它是后续所有安装的入口，建议**全局**安装（个人通用）
+   | skill | installs | 仓库 star | 判断 |
+   |---|---:|---:|---|
+   | `warpdotdev/common-skills/write-tech-spec` | 24,793 | ⭐**564** | Warp 终端**厂商预装推送**带来的安装量，非社区验证，**未选** |
+   | `riekelt/technical-writer/writing-design-docs` | 5,860 | ⭐**16** | 名字最贴「设计文档写作」，但仓库几乎无人问津，**未选** |
+   | `github/awesome-copilot/*` | 7k–26k | ⭐**38,819** | GitHub 官方示例库，文档类成套且可维护，**本清单主力** |
 
-### 一、需求规格说明书（SRS）
+   **结论：文档类优先选 `github/awesome-copilot` 与 `wshobson/agents` 这类高 star 仓库**，installs 容易被厂商预装灌水。
 
-| 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
-|-----------|----------------------|------------------------|----------|
-| `work-define`（juanca202/sdd-devkit · ⭐0） | "写需求规格说明书"、"拆解用户故事"、"补验收标准"、"功能需求清单" | `npx skills add juanca202/sdd-devkit --skill work-define` | **项目级 + 进 git** |
-| `031-architecture-adr-functional-requirements`（jabrena/plinth · ⭐437） | "为功能需求/REST API 出 ADR"、"需求决策记录" | `npx skills add jabrena/plinth --skill 031-architecture-adr-functional-requirements` | **项目级 + 进 git** |
-| `uml`（markdown-viewer/skills · ⭐3.3k）— 用例图 | "画用例图"、"功能交互图"、"角色与用例" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
+---
 
-> `work-define` 会把需求拆成带标识（US-XX）的用户故事 + 验收标准，正好对应 SRS 的功能需求与验收准则章节；`uml` 的 use case 图用于功能建模。
+## 二、四大文档 × 推荐 skill 对照
 
-### 二、概要设计
+| 你要写的文档 | 推荐 skill | 安装量 | Star |
+|---|---|---:|---:|
+| **需求规格说明书**（SRS） | `create-specification` | 13,397 | ⭐38,819 |
+| **概要设计说明书**（架构/模块划分） | `architecture-blueprint-generator` | 11,964 | ⭐38,819 |
+| **详细设计说明书**（类/接口/职责） | `create-oo-component-documentation` | 7,022 | ⭐38,819 |
+| **用户使用说明手册** | `documentation-writer` | 26,239 | ⭐38,819 |
 
-| 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
-|-----------|----------------------|------------------------|----------|
-| `architecture-decision-records`（wshobson/agents · ⭐39.5k，15.3k 安装） | "记架构决策"、"出 ADR"、"技术选型留痕"、"MADR 模板" | `npx skills add wshobson/agents --skill architecture-decision-records` | **项目级 + 进 git** |
-| `adr-skill`（vercel/ai · ⭐26.6k） | "把决策写成可执行 ADR"、"技术决策含实施方案" | `npx skills add vercel/ai --skill adr-skill` | **项目级 + 进 git** |
-| `034-architecture-diagrams`（jabrena/cursor-rules-java → jabrena/plinth · ⭐437） | "画 C4 模型"、"上下文/容器/组件图"、"ER 图（库表设计）" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
-| `uml`（markdown-viewer/skills · ⭐3.3k）— 组件图/部署图 | "画组件图"、"部署架构图" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
+---
 
-> 概要设计 = 模块划分 + 技术选型 + 部署架构。`architecture-decision-records` / `adr-skill` 管"为什么这么选"（ADR 章节），`034-architecture-diagrams` 用 C4（Context→Container→Component）画分层架构与 ER 图，天然对应概要设计模板。
+## 三、完整清单（7 个主装 + 3 个配套）
 
-### 三、详细设计
+| # | 方向 | skill | 来源仓库 | 安装量 | Star | 用法（触发场景 / 产出什么） |
+|---:|---|---|---|---:|---:|---|
+| 1 | **需求规格说明书** | `create-specification` | `github/awesome-copilot` | **13,397** | ⭐38,819 | 「写一份 XX 系统的需求规格说明书」→ 输出目标、范围、功能/非功能需求、验收标准、约束。**可先让它生成规格再据此开发**。 |
+| 2 | **概要设计说明书** | `architecture-blueprint-generator` | `github/awesome-copilot` | **11,964** | ⭐38,819 | 「出一份概要设计」→ 生成系统架构蓝图：分层、模块划分、技术选型、关键组件关系。对应「概要设计说明书」的架构总览章节。 |
+| 3 | **详细设计说明书** | `create-oo-component-documentation` | `github/awesome-copilot` | **7,022** | ⭐38,819 | 「给这个模块写详细设计」→ 输出类的职责、公开接口、依赖关系、协作时序。对应「详细设计说明书」的模块/类设计章节（OO 粒度）。 |
+| 4 | **用户使用说明手册** | `documentation-writer` | `github/awesome-copilot` | **26,239** | ⭐38,819 | 「写用户使用手册 / 操作指南」→ 面向最终用户的分步骤说明、截图位、常见问题。本类目 install 量最高的通用文档写作 skill。 |
+| 5 | **架构决策记录（ADR）** | `architecture-decision-records` | `wshobson/agents` | **16,372** | ⭐39,535 | 「为什么选 Kafka 而不是 RabbitMQ」→ 生成结构化 ADR（背景/决策/后果）。**设计说明书的"技术选型理由"章节直接可用**。 |
+| 6 | **文档配图（架构图/时序图）** | `mermaid-diagrams` | `softaworks/agent-toolkit` | **4,863** | ⭐2,452 | 「画一张架构图/流程图/时序图」→ 输出 Mermaid 代码，可直接贴进 Markdown 文档。设计说明书与手册的**配图刚需**。 |
+| 7 | **README / 项目说明** | `create-readme` | `github/awesome-copilot` | **18,165** | ⭐38,819 | 「给这个项目写 README」→ 项目简介、快速开始、目录结构、贡献指南。 |
 
-| 推荐 Skill | 触发关键词 / 调用方式 | 安装（skills.sh 方式） | 建议层级 |
-|-----------|----------------------|------------------------|----------|
-| `034-architecture-diagrams`（jabrena/plinth · ⭐437） | "画类图"、"序列图"、"状态机图"、"ER 图" | `npx skills add jabrena/cursor-rules-java --skill 034-architecture-diagrams` | **项目级 + 进 git** |
-| `uml`（markdown-viewer/skills · ⭐3.3k） | "UML 类图/时序图/状态图"、"PlantUML 语法" | `npx skills add markdown-viewer/skills --skill uml` | **项目级 + 进 git** |
-| `design-define`（juanca202/sdd-devkit · ⭐0） | "写详细设计文档"、"数据模型/API/流程图规范"、"技术规格书" | `npx skills add juanca202/sdd-devkit --skill design-define` | **项目级 + 进 git** |
-| `openapi-documentation`（dengineproblem/agents-monorepo · ⭐N/A，GitHub 404） | "写接口契约"、"OpenAPI 3.0 规范"、"Swagger 文档" | `npx skills add dengineproblem/agents-monorepo --skill openapi-documentation` | **项目级 + 进 git** |
-| `api-documentation-generator`（aiskillstore/marketplace · ⭐418） | "从代码生成 OpenAPI"、"自动出接口文档" | `npx skills add aiskillstore/marketplace --skill api-documentation-generator` | **项目级 + 进 git** |
+### 同仓库配套（按需加装，不算方向重复）
 
-> 详细设计 = 类/对象设计 + 接口契约 + 关键流程。用 `034-architecture-diagrams` + `uml` 出类图/时序图/状态机，`design-define` 把数据模型、API、流程标准化成带 `MD-XX/API-XX/FL-XX` 标识的技术规格，`openapi-documentation` 把 REST 接口写成可执行契约（对应你们 Spring Cloud 的微服务接口）。
+均来自 `github/awesome-copilot`（⭐38,819），与主表配套使用：
 
-### 安装命令（skills.sh 统一体系）
+| skill | 安装量 | 用途 |
+|---|---:|---|
+| `update-specification` | 9,236 | 需求变更时**增量更新**已生成的规格，避免重写 |
+| `create-github-issues-for-unmet-specification-requirements` | 8,975 | 把规格中「未满足的需求」自动转成 issue，需求→任务闭环 |
+| `update-oo-component-documentation` | 6,991 | 代码变更后同步更新详细设计文档 |
 
-| 目的 | 命令 |
-|------|------|
-| 预览仓库内有哪些技能（先看清再装） | `npx skills add owner/repo --list` |
-| 装单个技能（**项目级，默认**） | `npx skills add owner/repo --skill skill-name` |
-| 装到**全局**（跨项目可用） | `npx skills add owner/repo --skill skill-name -g` |
-| 指定装到某个 Agent | `npx skills add owner/repo --skill skill-name -a cursor`（或 `-a claude-code`） |
-| 装整个仓库全部技能 | `npx skills add owner/repo --all` |
-| 按关键词搜社区技能 | `npx skills find <关键词>` |
-| 查看已装（全局加 `-g`） | `npx skills list` / `npx skills list -g` |
-| 更新（单个 / 全部） | `npx skills update <name>` / `npx skills update` |
-| 删除 | `npx skills remove <name>` |
-| 把自己的文档模板固化成技能 | `npx skills init my-doc-skill` |
+> 这三件套的价值在于「**文档可维护**」：写文档只是开始，代码变了文档能跟着更新才是关键。
 
-> 项目级默认落到 `.cursor/skills/`（或 `.agents/skills/`），全局落到 `~/.cursor/skills/`（或 `~/.agents/skills/`）。Cursor 会递归扫描并自动加载。
+---
 
-### 全局 vs 项目级：决策框架（文档场景）
+## 四、安装命令
 
-| 维度 | 用户级（全局 `-g`） | 项目级（默认 → `.cursor/skills/` 进 git） |
-|------|-------------------|------------------------------------------|
-| 作用范围 | 你本地所有项目 | 仅本项目，队友 clone 即得 |
-| 适合内容 | 个人偏好的写作风格 | **团队文档模板、SRS/设计章节规范、画图约定** |
-| 同步到 Cloud / SSH worker | ❌ 不会同步 | ✅ 仓库里就有 |
-| 版本 / 审计 | 个人维护，难统一 | 进 git，可评审、可回滚、可审计 |
-| 典型例子 | `find-skills` | `work-define`、`design-define`、`034-architecture-diagrams`、`architecture-decision-records`、`openapi-documentation` |
+`--agent cursor` 为快模式（只给 Cursor 建软链，秒级完成）；全平台版换成 `--agent '*'`（单 skill 约 7 分钟）。
 
-> **结论（结合贵司强合规）**：文档类技能本质是"团队模板与规范"，务必**项目级 + 进 git**——队友拿到即用、审计可查、也能跑在 Cloud/SSH worker 上。
+```bash
+# 四大文档主力 + README（同一仓库，一次装完）
+npx -y skills add github/awesome-copilot \
+  --skill create-specification \
+  --skill architecture-blueprint-generator \
+  --skill create-oo-component-documentation \
+  --skill documentation-writer \
+  --skill create-readme \
+  -y --agent cursor
 
-> ⚠️ **关键限制（来自 [[09-Cursor中的Skill全景]]）**：Cursor **不会**把 `~/.cursor/skills/` 同步到 Cloud Agents、远程 SSH、self-hosted worker。团队文档规范必须放项目级并进 git。
+# ADR + Mermaid 配图
+npx -y skills add wshobson/agents --skill architecture-decision-records -y --agent cursor
+npx -y skills add softaworks/agent-toolkit --skill mermaid-diagrams -y --agent cursor
 
-### 落地建议（结合贵司强合规背景）
+# 可选：文档可维护性三件套
+npx -y skills add github/awesome-copilot \
+  --skill update-specification \
+  --skill create-github-issues-for-unmet-specification-requirements \
+  --skill update-oo-component-documentation \
+  -y --agent cursor
+```
 
-1. **文档/设计类技能 → 一律项目级 + 进 git**
-   - 包括：`work-define`、`design-define`、`034-architecture-diagrams`、`uml`、`architecture-decision-records`、`adr-skill`、`031-architecture-adr-functional-requirements`、`openapi-documentation`、`api-documentation-generator`
-   - 理由：模板统一、可审计、可评审、可同步到 worker、队友 clone 即得
-2. **元技能 `find-skills` → 全局（`-g`）**，作为个人入口
-3. **装前先预览**：`npx skills add owner/repo --list`，确认内容再 `--skill` 安装；产出物（`.md` / `.puml`）统一放进 `docs/` 对应子目录
-4. **合规衔接**：文档模板里嵌入 [[12-Skill安全与企业合规]] 的数据分级（L0–L3）要求，涉密章节单列
+> 如遇 GitHub SSL 握手失败：`git config --global url."https://ghproxy.net/https://github.com/".insteadOf "https://github.com/"`，**装完记得 `--unset`**。
 
-### 风险提示
+---
 
-- 从 [[12-Skill安全与企业合规]] 与 [[15-Skill市场与下载渠道]] 已知：**市场 ≠ 可信**（Snyk 审计 3984 个技能，13.4% 含严重问题；学术界扫 42447 个，26.1% 含漏洞）
-- 项目级文档技能**进 git 前必须做代码评审**；带 `scripts/` 的技能出事概率是纯指令型的 **2.12 倍**
-- 企业：只从白名单市场下载，建立技能审批流程后再进项目级目录；文档产出物也需走内部评审与密级标识
+## 五、实践建议（怎么写得更快）
+
+1. **按顺序串起来**：`create-specification`（需求）→ `architecture-blueprint-generator`（概要）→ `create-oo-component-documentation`（详细）→ `documentation-writer`（用户手册）。前一步的输出直接作为后一步的输入，四份文档天然一致。
+2. **配图别手画**：用到架构/流程/时序时先让 `mermaid-diagrams` 出 Mermaid 代码，粘进文档即可渲染。
+3. **选型理由用 ADR 承载**：不要把「为什么这么选」塞进设计说明书正文，用 `architecture-decision-records` 单独成文再引用，后续变更也好追溯。
+4. **文档写完要能跟着代码走**：加装 `update-specification` / `update-oo-component-documentation`，否则文档三个月就失效。
+
+---
 
 ## 相关
-
-- [[09-Cursor中的Skill全景]]
-- [[10-Cursor安装与使用教程]]
-- [[12-Skill安全与企业合规]]
-- [[15-Skill市场与下载渠道]]
-- [[16-程序员推荐安装的Skill]]
-- [[18-通用Skill]]
-- [[02-Agent-Skills开放标准与生态全景]]
+- [[18-通用Skill]]（架构/质量/调试/提交规范等通用工程能力，与本篇互补）
+- [[16-程序员推荐安装的Skill]]（更早的通用推荐）
+- [[23-skill主流技术栈]]（按 Java/Vue3 语言栈的选型）
+- [[22-Skill现有技术栈]]（受存量版本约束的选型）
 
 ## 来源
-
-- https://skills.sh （排行榜、安装量、CLI 文档）
-- https://github.com/juanca202/sdd-devkit （work-define 需求/功能文档、design-define 技术设计文档）
-- https://github.com/jabrena/cursor-rules-java （034-architecture-diagrams：UML 类/序列/状态机 + C4 + ER，PlantUML）
-- https://github.com/markdown-viewer/skills （uml：UML 图生成器）
-- https://github.com/wshobson/agents （architecture-decision-records：ADR 模板，15.3k 安装）
-- https://github.com/vercel/ai （adr-skill：可执行 ADR 规范）
-- https://github.com/jabrena/plinth （031-architecture-adr-functional-requirements：功能需求/REST API 的 ADR）
-- https://github.com/dengineproblem/agents-monorepo （openapi-documentation：OpenAPI 3.0/Swagger 规范）
-- https://github.com/aiskillstore/marketplace （api-documentation-generator：从代码生成 OpenAPI）
-- https://github.com/vercel-labs/skills （find-skills 元技能）
+- skills.sh 公开检索接口：`https://www.skills.sh/api/search?q=...`（installs，检索于 2026-09-10）
+- GitHub `stargazers_count`（star，检索于 2026-09-10；部分取自仓库页面，因 API 配额用尽）
+- 检索关键词：`documentation` / `technical writing` / `requirements specification` / `design document` / `user manual` / `api documentation` / `srs` / `mermaid diagram` 等 12 组
