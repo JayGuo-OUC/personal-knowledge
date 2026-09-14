@@ -1,0 +1,183 @@
+{
+  "total": 101,
+  "active": 84,
+  "backup": 17,
+  "themes": {
+    "": 2,
+    "Agent-Skill": 26,
+    "git": 12,
+    "JDK&Spring": 6,
+    "云原生": 20,
+    "珍大户": 18
+  },
+  "orphans": [],
+  "stubs": [
+    {
+      "rel": "log.md",
+      "size": 22745,
+      "marker": true,
+      "date": "2026-09-11",
+      "longterm": true
+    }
+  ],
+  "dead_real": {
+    "CLAUDE": [
+      "index.md",
+      "index.md",
+      "JDK&Spring/JDK&Spring-index.md",
+      "JDK&Spring/JDK&Spring-index.md",
+      "云原生/19-学习路线与资源.md",
+      "云原生/19-学习路线与资源.md",
+      "云原生/云原生-index.md",
+      "云原生/云原生-index.md",
+      "珍大户/珍大户-index.md",
+      "珍大户/珍大户-index.md",
+      "珍大户/_旧版备份/珍大户-index.md"
+    ]
+  },
+  "dead_hist": {
+    "CLAUDE": [
+      "log.md",
+      "log.md",
+      "log.md",
+      "log.md"
+    ],
+    "Git概览": [
+      "log.md",
+      "log.md",
+      "log.md"
+    ],
+    "Git核心概念": [
+      "log.md",
+      "log.md"
+    ],
+    "Git学习路线与资源": [
+      "log.md",
+      "log.md"
+    ],
+    "Git主题索引": [
+      "log.md",
+      "log.md"
+    ],
+    "wiki/珍大户/assets/images/...": [
+      "log.md"
+    ],
+    "双链": [
+      "log.md",
+      "log.md"
+    ],
+    "20-Skill后端试用": [
+      "log.md",
+      "log.md",
+      "log.md"
+    ]
+  },
+  "infer_map": {
+    "CLAUDE": [
+      null,
+      0.19
+    ]
+  },
+  "overlap": [
+    [
+      0.851,
+      "珍大户/01-政策解读.md",
+      "珍大户/珍大户-重点必读.md"
+    ],
+    [
+      0.817,
+      "Agent-Skill/22-Skill现有技术栈.md",
+      "Agent-Skill/23-skill主流技术栈.md"
+    ],
+    [
+      0.497,
+      "珍大户/07-创业与商业.md",
+      "珍大户/08-职场与教育.md"
+    ],
+    [
+      0.482,
+      "珍大户/07-创业与商业.md",
+      "珍大户/10-育儿与家庭.md"
+    ],
+    [
+      0.477,
+      "珍大户/07-创业与商业.md",
+      "珍大户/13-学习方法与自媒体.md"
+    ],
+    [
+      0.476,
+      "珍大户/10-育儿与家庭.md",
+      "珍大户/13-学习方法与自媒体.md"
+    ],
+    [
+      0.458,
+      "珍大户/04-房产与城市.md",
+      "珍大户/珍大户-系列脉络.md"
+    ],
+    [
+      0.45,
+      "珍大户/08-职场与教育.md",
+      "珍大户/10-育儿与家庭.md"
+    ],
+    [
+      0.446,
+      "珍大户/10-育儿与家庭.md",
+      "珍大户/14-生活随笔与思辨.md"
+    ],
+    [
+      0.441,
+      "珍大户/07-创业与商业.md",
+      "珍大户/14-生活随笔与思辨.md"
+    ],
+    [
+      0.441,
+      "Agent-Skill/23-skill主流技术栈.md",
+      "Agent-Skill/25-开发Skill最佳实践.md"
+    ],
+    [
+      0.438,
+      "Agent-Skill/17-文档Skill.md",
+      "Agent-Skill/18-通用Skill.md"
+    ],
+    [
+      0.433,
+      "珍大户/08-职场与教育.md",
+      "珍大户/13-学习方法与自媒体.md"
+    ],
+    [
+      0.431,
+      "珍大户/07-创业与商业.md",
+      "珍大户/15-圈子运营与说明.md"
+    ],
+    [
+      0.43,
+      "Agent-Skill/22-Skill现有技术栈.md",
+      "Agent-Skill/25-开发Skill最佳实践.md"
+    ],
+    [
+      0.411,
+      "珍大户/08-职场与教育.md",
+      "珍大户/14-生活随笔与思辨.md"
+    ],
+    [
+      0.41,
+      "珍大户/06-行业分析.md",
+      "珍大户/07-创业与商业.md"
+    ],
+    [
+      0.407,
+      "珍大户/10-育儿与家庭.md",
+      "珍大户/15-圈子运营与说明.md"
+    ],
+    [
+      0.407,
+      "珍大户/07-创业与商业.md",
+      "珍大户/12-其他与杂谈.md"
+    ],
+    [
+      0.405,
+      "JDK&Spring/02-Spring4新特性.md",
+      "JDK&Spring/04-Spring4与Spring2对比.md"
+    ]
+  ]
+}
