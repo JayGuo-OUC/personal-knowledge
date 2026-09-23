@@ -1,183 +1,540 @@
 {
-  "total": 101,
-  "active": 84,
-  "backup": 17,
-  "themes": {
-    "": 2,
-    "Agent-Skill": 26,
-    "git": 12,
-    "JDK&Spring": 6,
-    "云原生": 20,
-    "珍大户": 18
+  "counts": {
+    "total": 118,
+    "active": 101,
+    "backup": 17
   },
   "orphans": [],
   "stubs": [
+    [
+      "log.md",
+      30737,
+      "2026-09-11",
+      false
+    ],
+    [
+      "珍大户\\01-政策解读.md",
+      22747,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\02-年度大预测.md",
+      9091,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\03-宏观与经济.md",
+      8890,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\04-房产与城市.md",
+      20362,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\05-股票与投资.md",
+      15566,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\06-行业分析.md",
+      10452,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\08-职场与教育.md",
+      2924,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\09-国际与地缘.md",
+      16321,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\12-其他与杂谈.md",
+      7947,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\14-生活随笔与思辨.md",
+      4013,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\珍大户-index.md",
+      2443,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\珍大户-系列脉络.md",
+      132415,
+      "2026-09-08",
+      false
+    ],
+    [
+      "珍大户\\珍大户-重点必读.md",
+      19641,
+      "2026-09-08",
+      false
+    ]
+  ],
+  "broken": [
     {
-      "rel": "log.md",
-      "size": 22745,
-      "marker": true,
-      "date": "2026-09-11",
-      "longterm": true
+      "src": "index.md",
+      "target": "CLAUDE",
+      "inferred": null
+    },
+    {
+      "src": "log.md",
+      "target": "Git概览",
+      "inferred": "01-Git概览"
+    },
+    {
+      "src": "log.md",
+      "target": "Git核心概念",
+      "inferred": "02-Git核心概念"
+    },
+    {
+      "src": "log.md",
+      "target": "Git学习路线与资源",
+      "inferred": "14-学习路线与资源"
+    },
+    {
+      "src": "log.md",
+      "target": "Git主题索引",
+      "inferred": null
+    },
+    {
+      "src": "log.md",
+      "target": "CLAUDE",
+      "inferred": null
+    },
+    {
+      "src": "log.md",
+      "target": "wiki/珍大户/assets/images/...",
+      "inferred": null
+    },
+    {
+      "src": "log.md",
+      "target": "双链",
+      "inferred": null
+    },
+    {
+      "src": "log.md",
+      "target": "20-Skill后端试用",
+      "inferred": null
+    },
+    {
+      "src": "log.md",
+      "target": "...",
+      "inferred": null
+    },
+    {
+      "src": "log.md",
+      "target": "00-学习路径总览",
+      "inferred": null
+    },
+    {
+      "src": "docker\\docker-index.md",
+      "target": "双链",
+      "inferred": null
+    },
+    {
+      "src": "JDK&Spring\\JDK&Spring-index.md",
+      "target": "CLAUDE",
+      "inferred": null
+    },
+    {
+      "src": "moc\\我的风格.md",
+      "target": "CLAUDE",
+      "inferred": null
+    },
+    {
+      "src": "云原生\\19-学习路线与资源.md",
+      "target": "CLAUDE",
+      "inferred": null
+    },
+    {
+      "src": "云原生\\云原生-index.md",
+      "target": "CLAUDE",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/2852214841224441/2858242451188251.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/45544852411285230/1525451585214522.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/45544544281545490/4848582821448218.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/1524188541418182/8855815142888452.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/585124144188154/218811415552521.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/585124144188154/418811214445418.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/5122511554518444/5121545412544824.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/8855221852548112/214488825122581.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\01-政策解读.md",
+      "target": "wiki/珍大户/assets/images/8855451122112122/814445411582422.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\02-年度大预测.md",
+      "target": "wiki/珍大户/assets/images/4848155425881188/5121545412148554.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\02-年度大预测.md",
+      "target": "wiki/珍大户/assets/images/4845242144248548/588828488558514.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\02-年度大预测.md",
+      "target": "wiki/珍大户/assets/images/4845242144248548/188828188448452.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\02-年度大预测.md",
+      "target": "wiki/珍大户/assets/images/4845242144248548/411141211551588.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\02-年度大预测.md",
+      "target": "wiki/珍大户/assets/images/182552255885552/582251551148124.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\02-年度大预测.md",
+      "target": "wiki/珍大户/assets/images/182552255885552/215528228841851.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\03-宏观与经济.md",
+      "target": "wiki/珍大户/assets/images/4848221124284418/188485524855542.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\04-房产与城市.md",
+      "target": "wiki/珍大户/assets/images/1525454425585242/411811255541588.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\04-房产与城市.md",
+      "target": "wiki/珍大户/assets/images/2858151425824151/211454248518241.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\04-房产与城市.md",
+      "target": "wiki/珍大户/assets/images/14422414824888522/1525415228125212.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\04-房产与城市.md",
+      "target": "wiki/珍大户/assets/images/14422414824888522/5121541228421254.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\04-房产与城市.md",
+      "target": "wiki/珍大户/assets/images/14422414824888522/2858248551458551.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\05-股票与投资.md",
+      "target": "wiki/珍大户/assets/images/4848581851121848/588522481248214.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\05-股票与投资.md",
+      "target": "wiki/珍大户/assets/images/8858455422221822/8858242182125422.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\05-股票与投资.md",
+      "target": "wiki/珍大户/assets/images/2854555218544541/8855284844522852.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\06-行业分析.md",
+      "target": "wiki/珍大户/assets/images/414115124455588/182511428481112.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\06-行业分析.md",
+      "target": "wiki/珍大户/assets/images/414115124455588/414822541512228.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\06-行业分析.md",
+      "target": "wiki/珍大户/assets/images/211884254455281/415241185412128.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\06-行业分析.md",
+      "target": "wiki/珍大户/assets/images/4848155418588488/411281482224288.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\08-职场与教育.md",
+      "target": "wiki/珍大户/assets/images/1524851445458122/5122188558448124.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\09-国际与地缘.md",
+      "target": "wiki/珍大户/assets/images/5125555584888284/811415481248252.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\09-国际与地缘.md",
+      "target": "wiki/珍大户/assets/images/45811814284411530/1522115454841282.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\09-国际与地缘.md",
+      "target": "wiki/珍大户/assets/images/214515588885851/585244842211144.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\09-国际与地缘.md",
+      "target": "wiki/珍大户/assets/images/412551112845218/184425482141212.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\09-国际与地缘.md",
+      "target": "wiki/珍大户/assets/images/2852224118228881/211418481214411.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\09-国际与地缘.md",
+      "target": "wiki/珍大户/assets/images/2852212821418251/811152422511112.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\09-国际与地缘.md",
+      "target": "wiki/珍大户/assets/images/55522181444858150/1525451518254222.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\09-国际与地缘.md",
+      "target": "wiki/珍大户/assets/images/22255441541245840/2858458448418451.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\12-其他与杂谈.md",
+      "target": "wiki/珍大户/assets/images/5125414245518844/4844855415514888.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\12-其他与杂谈.md",
+      "target": "wiki/珍大户/assets/images/5125414245518844/8855822512455282.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\13-学习方法与自媒体.md",
+      "target": "wiki/珍大户/assets/images/2854555242814441/1522451548545142.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\13-学习方法与自媒体.md",
+      "target": "wiki/珍大户/assets/images/2854555242814441/4844582822455888.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\14-生活随笔与思辨.md",
+      "target": "wiki/珍大户/assets/images/14588245518828422/4844512858258228.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\14-生活随笔与思辨.md",
+      "target": "wiki/珍大户/assets/images/14588245518828422/8855214828428442.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\14-生活随笔与思辨.md",
+      "target": "wiki/珍大户/assets/images/14588245518828422/1522481545145112.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\15-圈子运营与说明.md",
+      "target": "wiki/珍大户/assets/images/1524884455111812/1522455115828112.png",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\15-圈子运营与说明.md",
+      "target": "wiki/珍大户/assets/images/1524884455111812/2855288448188841.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\15-圈子运营与说明.md",
+      "target": "wiki/珍大户/assets/images/1524884455111812/4844588228188818.jpg",
+      "inferred": null
+    },
+    {
+      "src": "珍大户\\珍大户-index.md",
+      "target": "CLAUDE",
+      "inferred": null
     }
   ],
-  "dead_real": {
-    "CLAUDE": [
+  "sim_pairs": [],
+  "recent": [
+    [
       "index.md",
-      "index.md",
-      "JDK&Spring/JDK&Spring-index.md",
-      "JDK&Spring/JDK&Spring-index.md",
-      "云原生/19-学习路线与资源.md",
-      "云原生/19-学习路线与资源.md",
-      "云原生/云原生-index.md",
-      "云原生/云原生-index.md",
-      "珍大户/珍大户-index.md",
-      "珍大户/珍大户-index.md",
-      "珍大户/_旧版备份/珍大户-index.md"
+      "2026-08-26",
+      "2026-09-17"
+    ],
+    [
+      "log.md",
+      "2026-08-26",
+      "2026-09-11"
+    ],
+    [
+      "docker\\01-容器与Docker入门.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\02-安装与环境配置.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\03-镜像容器仓库核心概念.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\04-镜像操作实战.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\05-容器生命周期管理.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\06-容器内操作与调试.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\07-Dockerfile完全指南.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\08-构建你的第一个镜像.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\09-数据持久化Volume与挂载.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\10-容器网络.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\11-Docker-Compose编排.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\12-实战全栈应用编排.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\13-Docker-Hub与私有仓库.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\14-生产环境最佳实践.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\15-常见问题与排错.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "docker\\docker-index.md",
+      "2026-09-17",
+      "2026-09-17"
+    ],
+    [
+      "JDK&Spring\\01-JDK21新特性.md",
+      "2026-09-02",
+      "2026-09-11"
+    ],
+    [
+      "JDK&Spring\\02-Spring4新特性.md",
+      "2026-09-02",
+      "2026-09-11"
+    ],
+    [
+      "moc\\我的风格.md",
+      "2026-09-11",
+      "2026-09-11"
+    ],
+    [
+      "云原生\\云原生-index.md",
+      "2026-08-26",
+      "2026-09-17"
     ]
-  },
-  "dead_hist": {
-    "CLAUDE": [
-      "log.md",
-      "log.md",
-      "log.md",
-      "log.md"
-    ],
-    "Git概览": [
-      "log.md",
-      "log.md",
-      "log.md"
-    ],
-    "Git核心概念": [
-      "log.md",
-      "log.md"
-    ],
-    "Git学习路线与资源": [
-      "log.md",
-      "log.md"
-    ],
-    "Git主题索引": [
-      "log.md",
-      "log.md"
-    ],
-    "wiki/珍大户/assets/images/...": [
-      "log.md"
-    ],
-    "双链": [
-      "log.md",
-      "log.md"
-    ],
-    "20-Skill后端试用": [
-      "log.md",
-      "log.md",
-      "log.md"
-    ]
-  },
-  "infer_map": {
-    "CLAUDE": [
-      null,
-      0.19
-    ]
-  },
-  "overlap": [
-    [
-      0.851,
-      "珍大户/01-政策解读.md",
-      "珍大户/珍大户-重点必读.md"
-    ],
-    [
-      0.817,
-      "Agent-Skill/22-Skill现有技术栈.md",
-      "Agent-Skill/23-skill主流技术栈.md"
-    ],
-    [
-      0.497,
-      "珍大户/07-创业与商业.md",
-      "珍大户/08-职场与教育.md"
-    ],
-    [
-      0.482,
-      "珍大户/07-创业与商业.md",
-      "珍大户/10-育儿与家庭.md"
-    ],
-    [
-      0.477,
-      "珍大户/07-创业与商业.md",
-      "珍大户/13-学习方法与自媒体.md"
-    ],
-    [
-      0.476,
-      "珍大户/10-育儿与家庭.md",
-      "珍大户/13-学习方法与自媒体.md"
-    ],
-    [
-      0.458,
-      "珍大户/04-房产与城市.md",
-      "珍大户/珍大户-系列脉络.md"
-    ],
-    [
-      0.45,
-      "珍大户/08-职场与教育.md",
-      "珍大户/10-育儿与家庭.md"
-    ],
-    [
-      0.446,
-      "珍大户/10-育儿与家庭.md",
-      "珍大户/14-生活随笔与思辨.md"
-    ],
-    [
-      0.441,
-      "珍大户/07-创业与商业.md",
-      "珍大户/14-生活随笔与思辨.md"
-    ],
-    [
-      0.441,
-      "Agent-Skill/23-skill主流技术栈.md",
-      "Agent-Skill/25-开发Skill最佳实践.md"
-    ],
-    [
-      0.438,
-      "Agent-Skill/17-文档Skill.md",
-      "Agent-Skill/18-通用Skill.md"
-    ],
-    [
-      0.433,
-      "珍大户/08-职场与教育.md",
-      "珍大户/13-学习方法与自媒体.md"
-    ],
-    [
-      0.431,
-      "珍大户/07-创业与商业.md",
-      "珍大户/15-圈子运营与说明.md"
-    ],
-    [
-      0.43,
-      "Agent-Skill/22-Skill现有技术栈.md",
-      "Agent-Skill/25-开发Skill最佳实践.md"
-    ],
-    [
-      0.411,
-      "珍大户/08-职场与教育.md",
-      "珍大户/14-生活随笔与思辨.md"
-    ],
-    [
-      0.41,
-      "珍大户/06-行业分析.md",
-      "珍大户/07-创业与商业.md"
-    ],
-    [
-      0.407,
-      "珍大户/10-育儿与家庭.md",
-      "珍大户/15-圈子运营与说明.md"
-    ],
-    [
-      0.407,
-      "珍大户/07-创业与商业.md",
-      "珍大户/12-其他与杂谈.md"
-    ],
-    [
-      0.405,
-      "JDK&Spring/02-Spring4新特性.md",
-      "JDK&Spring/04-Spring4与Spring2对比.md"
-    ]
+  ],
+  "structural": [
+    "Agent-Skill\\Agent-Skill-index.md",
+    "JDK&Spring\\JDK&Spring-index.md",
+    "docker\\docker-index.md",
+    "git\\git-index.md",
+    "index.md",
+    "log.md",
+    "moc\\我的风格.md",
+    "云原生\\云原生-index.md",
+    "珍大户\\珍大户-index.md"
   ]
 }

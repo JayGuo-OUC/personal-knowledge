@@ -2,7 +2,7 @@
 title: Spring Boot 4 / Spring Framework 7 新特性
 type: entry
 created: 2026-09-02
-updated: 2026-09-11
+updated: 2026-09-18
 tags: [Spring, SpringBoot4, SpringFramework7, 新特性, 架构升级]
 sources: [Spring Boot 4.0 Release Notes, InfoQ 报道(2025-11), Baeldung, OpenRewrite 迁移配方文档]
 ---
@@ -21,14 +21,14 @@ Spring Boot 4.0 于 **2025-11-20** 正式发布，构建在 **Spring Framework 7
 
 | 版本 | 发布日期 | 最低 Java | 支持 Java | OSS 支持截止 |
 |------|---------|----------|----------|-------------|
-| **Spring Boot 4.1**（推荐） | 2026-06-10 | 17 | 17 – 26 | 2027-07-31（估） |
+| **Spring Boot 4.1**（推荐） | 2026-08-20（4.1.1） | 17 | 17 – 26 | 2027-06-30（官方估计） |
 | Spring Boot 4.0 | 2025-11-20 | 17 | 17 – 25 | 2026-12-31 |
 | Spring Boot 3.5 | 2025-05-31 | 17 | 17 – 25 | **已于 2026-06-30 EOL** |
 | Spring Boot 3.4 及更早 | — | — | — | **全部 EOL** |
 
 **结论：新项目/升级项目直接上 Spring Boot 4.1，不要再落 3.x。** Boot 3.x 全系已进入或即将进入 EOL，只有付费商业支持（Broadcom Tanzu / HeroDevs NES）才能继续拿补丁。
 
-> ✅ **数据核实时点：2026-09-11（已联网核实）** — Spring Boot 4.1.0 发布日 2026-06-10、3.5 OSS EOL 2026-06-30 均与 Spring 官方博客及 endoflife 跟踪器一致；4.1 OSS 支持截止 2027-07-31 为官方估计值，结论保持不变。
+> ✅ **数据核实时点：2026-09-18（已联网复核）** — Spring Boot 4.1.0 发布日 2026-06-10、3.5 OSS EOL 2026-06-30 均与 Spring 官方博客及 endoflife/版本跟踪器一致；最新补丁已到 **4.1.1（2026-08-20）**，**4.2.0-M1** 已发布（GA 预计 2026-11）；4.1 OSS 支持截止按版本跟踪器为 **2027-06-30**，结论（新项目直接上 4.1.x）保持不变。
 
 ## 一、基座升级
 

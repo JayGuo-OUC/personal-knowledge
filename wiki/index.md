@@ -2,7 +2,7 @@
 title: 知识库总索引
 type: index
 created: 2026-08-26
-updated: 2026-09-11
+updated: 2026-09-17
 tags: [索引]
 sources: []
 ---
@@ -16,14 +16,15 @@ sources: []
 - [[JDK&Spring-index]] — JDK & Spring 架构升级（JDK 21 / Spring Boot 4 特性、版本对比、迁移路径、升级论证），共 5 篇
 - [[云原生-index]] — 云原生（容器 / Kubernetes / 微服务 / 可观测性 / DevOps 等），共 19 篇
 - [[git-index]] — Git（版本控制 / 分支 / 远程协作 / 变基 / 工作流等），共 11 篇
+- [[docker-index]] — Docker 完整学习路径课程（容器概念 / 安装 / 镜像·容器·仓库 / 日常操作 / Dockerfile / 数据·网络 / Compose 编排 / 仓库 / 生产实践 / 排错），共 16 篇，落位于 `wiki/docker/`
 - [[珍大户-index]] — 珍大户的经济圈（政策解读 / 年度大预测 / 房产与城市 / 股票与投资 / 行业分析等 15 个主题），857 条官方精华 + 19 条目录补录
 - [[Agent-Skill-index]] — AI Agent Skill（概念 / 开放标准 / SKILL.md 结构 / 渐进式披露 / 作用原理 / 与 Rules·MCP·Subagent 对比 / Cursor 安装使用 / 安全合规 / 技术栈选型 / 文档与通用技能 / Cursor 内置技能 / 真实代码试用 / 软件开发 Skill / 开发最佳实践），共 25 篇 + 配套 Cursor 技能包
 
-## 统计（2026-09-11 更新）
+## 统计（2026-09-17 更新）
 
-- 主题数：5
-- wiki 页面数：84（JDK&Spring 6 / 云原生 20 / git 12 / 珍大户 18 / Agent-Skill 26 / 根级 index+log 2）
-- 本次校正：index 统计与实际文件数偏差修正（珍大户 16→18 计入系列脉络+重点必读；Agent-Skill 23→25 补录 24-软件开发Skill 与 25-开发Skill最佳实践）
+- 主题数：6
+- wiki 页面数：**101**（JDK&Spring 6 / 云原生 20 / git 12 / 珍大户 18 / Agent-Skill 26 / docker 16 / moc 1 / 根级 index+log 2）；不含 `珍大户/_旧版备份` 17 页
+- 本次校正：2026-09-17 将已移入 `wiki/docker/` 的 Docker 课程 16 篇由「未计入」更正为计入 wiki 页面数，并补计 09-11 健康检查发现新增的占位页 `moc/我的风格.md`（1 页）；活跃页由 84 → 101。
 
 ## 相关
 
